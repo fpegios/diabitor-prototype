@@ -15,25 +15,49 @@
 <body>
     
     <!-- SETUP -->
-    <div class="setup page hidden">
+    <div class="setup page active">
         <div class="header">
-            <h2>diabitor</h2>
+            <div class="left-action"></div>
+            <div class="title">diabitor</div>
+            <div class="right-action"></div>
         </div>
         <div class="body">
-            <div class="container">
-                <div class="column">
-                    <div id="kid-mode" class="column">
-                        <img src="assets/kid.png" alt="">
-                        <span>kid</span>
-                    </div>
-                    <div id="parent-mode" class="column">
-                        <div class="row">
-                            <img src="assets/parent_grey.png" alt="">
-                            <img src="assets/mama_grey.png" alt="">
-                        </div>
-                        <span>parent</span>
-                    </div>
+            <div id="kid-mode" class="column">
+                <img class="icon" src="assets/kid.png" alt="">
+                <span class="text">kid</span>
+            </div>
+            <div id="parent-mode" class="column">
+                <div class="row">
+                    <img class="icon" src="assets/parent-grey.png" alt="">
+                    <img class="icon" src="assets/mama-grey.png" alt="">
                 </div>
+                <span class="text">parent</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MONITOR PAGE -->
+    <div class="monitor page hidden">
+        <div class="header">
+            <div class="left-action"></div>
+            <div class="title">diabitor</div>
+            <div class="right-action"></div>
+        </div>
+        <div class="body">
+            <img id="monitor-btn" src="assets/monitor-circle.png">
+        </div>
+        <div class="footer">
+            <div class="monitor-tab column match-parent-height">
+                <img src="assets/heart-red.png" alt="">
+                <span class="red">Monitor</span>
+            </div>
+            <div class="history-tab column match-parent-height">
+                <img src="assets/analytics-grey.png" alt="">
+                <span class="grey">History</span>
+            </div>
+            <div class="profile-tab column match-parent-height">
+                <img src="assets/user-grey.png" alt="">
+                <span class="grey">Profile</span>
             </div>
         </div>
     </div>
@@ -41,111 +65,79 @@
     <!-- MEASUREMENT -->
     <div class="measurement page hidden">
         <div class="header">
-            <h2>diabitor</h2>
-            <div class="back-btn"></div>
+            <div class="left-action">
+                <img src="assets/left-arrow.png" alt="">
+            </div>
+            <div class="title">diabitor</div>
+            <div class="right-action"></div>
         </div>
         <div class="body">
-            <div class="container">
+            <div class="glucose-bottle">
+                <img src="assets/glucose.png" alt="">
+            </div>
+            <div class="line">
+                <img src="assets/line.png" alt="">
+            </div>
+            <div class="glucose-data">
                 <div class="column">
-                    <div class="glucose">
-                        <img src="assets/glucose.png" alt="">
-                    </div>
-                    <div class="line">
-                        <img src="assets/line.png" alt="">
-                    </div>
-                    <div class="glucose-value">
-                        <div class="column">
-                            <span class="title">glucose (mmol/l)</span>
-                            <span class="value">8.2</span>
-                        </div>
-                    </div>
+                    <span class="title">glucose (mmol/l)</span>
+                    <span class="value">8.2</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- LOGIN PAGE -->
-    <div class="login page hidden">
-        <h1>Hello Diabitor!</h1>
-        <p>HELLO LOGIN</p>
-        <button id="open-monitor-btn">OPEN MONITOR</button>
-    </div>
-    
-    <!-- MONITOR PAGE -->
-    <div class="monitor page">
-        <div class="header">
-            <h2>diabitor</h2>
-        </div>
-        <div class="body">
-            <img id="open-login" src="assets/circle.png">
-            <h2c>monitor</h2c>
-        </div>
-        <div class="footer"></div>
-    </div>
-
     <!-- PROFILE -->
-    <div class="user page">
+    <div class="profile page hidden">
         <div class="header">
-            <h2>diabitor</h2>
+            <div class="left-action">
+                <img id="cancel-btn" src="assets/cancel.png" style="visibility: hidden;">
+            </div>
+            <div class="title">diabitor</div>
+            <div class="right-action">
+                <img id="edit-btn" src="assets/edit.png" alt="">
+                <img id="save-btn" src="assets/save.png" style="visibility: hidden;">
+            </div>
         </div>
         <div class="body">
-            <img id="saveBtn" src="assets/save.png" style="visibility: hidden;">
-            <img id="cancelBtn" src="assets/cancel.png" style="visibility: hidden;">
-            <img id="edit" src="assets/edit.png">
-            <img id="user-page" src="assets/circle.png">
-            <img id="embed_img" src="assets/ghost.png">
-            <h1>Hi, Nick!</h1>
-            <div style='margin-bottom: 400px;'></div>
-            <hr>
-            <div class="twocoll">Name</div>
-            <div class="twocolr">Nick Johnson</div>
-            <br></br>
-            <hr>
-            <div class="twocoll">Age</div>
-            <div class="twocolr">11</div>
-            <br></br>
-            <hr>
-            <div class="twocoll">Gender</div>
-            <div class="twocolr">Male</div>
-            <br></br><hr>
-            <div class="twocoll">ID</div>
-            <div class="twocolr">JKL324</div>
-            <br></br><hr>
+            <img src="assets/ghost-circle.png">
+            <span class="username">Hi, Nick!</span>
+            <div class="user-details">
+                <div class="row">
+                    <span>Name</span>
+                    <span>Nick Johnson</span>
+                </div>
+                <div class="row">
+                    <span>Age</span>
+                    <span>11</span>
+                </div>
+                <div class="row">
+                    <span>Gender</span>
+                    <span>Male</span>
+                </div>
+                <div class="row">
+                    <span>ID</span>
+                    <span>JKL324</span>
+                </div>
+            </div>
         </div>
         <div class="footer">
-            <div class="container">
-                <div class="row space-between">
-                    <div id="monitor-btn" class="tab">
-                        <div class="container">
-                            <div class="column">
-                                <img src="assets/heart_red.png" alt="">
-                                <span class="red">Monitor</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="history-btn" class="tab">
-                        <div class="container">
-                            <div class="column">
-                                <img src="assets/analytics_grey.png" alt="">
-                                <span class="grey">History</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="profile-btn" class="tab">
-                        <div class="container">
-                            <div class="column">
-                                <img src="assets/user_grey.png" alt="">
-                                <span class="grey">Profile</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="monitor-tab column match-parent-height">
+                <img src="assets/heart-grey.png" alt="">
+                <span class="grey">Monitor</span>
+            </div>
+            <div class="history-tab column match-parent-height">
+                <img src="assets/analytics-grey.png" alt="">
+                <span class="grey">History</span>
+            </div>
+            <div class="profile-tab column match-parent-height">
+                <img src="assets/user-red.png" alt="">
+                <span class="red">Profile</span>
             </div>
         </div>
     </div>
 
     <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="dist/js/main.min.js"></script>
     <!-- SCRIPTS -->
 </body>

@@ -1,32 +1,35 @@
-.glucose {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    img {
-        height: 340px;
-    }
-}
+.body {
+    margin-bottom: 10vh;
 
-.line {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    img {
-        width: 120px;
-    }
-}
-
-.glucose-value {
-    .title {
-        color: $red;
-        font-family: Lato;
+    .glucose-bottle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+            height: 300px;
+        }
     }
 
-    .value {
-        color: $red;
-        font-family: Lato-Black;
-        font-size: 50px;
-        font-weight: bold;
+    .line {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        img {
+            width: 120px;
+        }
+    }
+
+    .glucose-data {
+        .title {
+            color: $red;
+            font-family: Lato;
+        }
+        .value {
+            color: $red;
+            font-family: Lato-Black;
+            font-size: 50px;
+            font-weight: bold;
+        }
     }
 }

@@ -1,37 +1,42 @@
-$( "#open-monitor-btn" ).click(function() {
-    hide(".login");
+// HEADER CONTROLLER
+// 
+$( ".measurement .left-action" ).click(function() {
     show(".monitor");
 });
 
-$( "#open-login" ).click(function() {
-    hide(".monitor");
-    show(".login");
+// BODY CONTROLLER
+// 
+$( "#kid-mode" ).click(function() {
+    show(".monitor");
 });
 
+$( "#parent-mode" ).click(function() {
+    show(".monitor");
+});
+
+$( "#monitor-btn" ).click(function() {
+    show(".measurement");
+});
+
+// FOOTER CONTROLLER
+//
+$( ".monitor-tab" ).click(function() {
+    show(".monitor");
+});
+
+$( ".profile-tab" ).click(function() {
+    show(".profile");
+});
+
+// FUNCTIONS
+// 
+// hide active element and show the selected one
 function show(element){
-    $( element).removeClass("hidden");
-    $( element).addClass("visible");
+    $(".active").removeClass("active").addClass("hidden");
+    $( element).removeClass("hidden").addClass("active");
 }
 
 function hide(element){
     $( element).removeClass("visible");
     $( element).addClass("hidden");
 }
-
-$( "#edit" ).click(function() {
-    hide(".edit");
-    show(".cancelBtn");
-    show(".saveBtn");
-});
-
-$( "#cancelBtn" ).click(function() {
-    hide(".cancelBtn");
-    hide(".saveBtn");
-    show(".edit");
-});
-
-$( "#saveBtn" ).click(function() {
-    hide(".cancelBtn");
-    hide(".saveBtn");
-    show(".edit");
-});
