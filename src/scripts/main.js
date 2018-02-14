@@ -1,6 +1,6 @@
 // HEADER CONTROLLER
 // 
-$( ".measurement .left-action" ).click(function() {
+$( ".measurement .left-action-btn" ).click(function() {
     show(".monitor");
 });
 

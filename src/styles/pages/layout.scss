@@ -12,9 +12,8 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
         div {
-            &.left-action {
+            &.left-action-btn {
                 position: absolute;
                 left: 15px;
                 display: flex;
@@ -30,7 +29,7 @@
                 font-size: 26px;
                 color: $red;
             }
-            &.right-action{
+            &.right-action-btn{
                 position: absolute;
                 right: 10px;
                 display: flex;
