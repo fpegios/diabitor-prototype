@@ -5,10 +5,23 @@
 @import '_mediaqueries';
 @import '_normalize';
 
-.page1 {
-    @import 'pages/page1.scss';
+.page {
+    height: 100%;
+    width: 100%;
 }
 
-.page2 {
-    @import 'pages/page2.scss';
+.hidden {
+    display: none!important;
+}
+
+.visible {
+    display: block!important;
+}
+
+.login {
+    @import 'pages/login.scss';
+}
+
+.monitor {
+    @import 'pages/monitor.scss';
 }
