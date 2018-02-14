@@ -17,3 +17,21 @@ function hide(element){
     $( element).removeClass("visible");
     $( element).addClass("hidden");
 }
+
+$( "#edit" ).click(function() {
+    hide(".edit");
+    show(".cancelBtn");
+    show(".saveBtn");
+});
+
+$( "#cancelBtn" ).click(function() {
+    hide(".cancelBtn");
+    hide(".saveBtn");
+    show(".edit");
+});
+
+$( "#saveBtn" ).click(function() {
+    hide(".cancelBtn");
+    hide(".saveBtn");
+    show(".edit");
+});

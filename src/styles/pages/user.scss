@@ -1,0 +1,68 @@
+// Font for user text under avatar
+.body h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    font-family: Nexa-Bold;
+    color: $red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+// Solid line
+.body hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top:-5px;
+    margin-bottom:14px;
+    padding: 1px;
+}
+
+.body div.twocoll{
+    float:left;
+    padding-left:65px;
+    color: $light-grey;
+}
+
+.body div.twocolr{
+    float:right;
+    padding-right:65px;
+    color: $light-grey;
+}
+
+.body img {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+// Diabitor circle
+.body img#user-page {
+    width: 90%;
+}
+
+// Image embedded in circle
+.body img#embed_img {
+    width: 40%;
+}
+
+// Edit icon
+.body img#edit, img#saveBtn {
+    position: absolute;
+    top: 4.5%;
+    left: 90%;
+    width: 6%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.body img#cancelBtn {
+    position: absolute;
+    top: 4.5%;
+    left: 10%;
+    width: 6%;
+    transform: translateX(-50%) translateY(-50%);
+}
