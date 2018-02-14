@@ -11,8 +11,16 @@
 
 .body {
 
+    h2 {
+        font-family: Nexa-Bold;
+        color: $red;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .footer {
-    
+
 }
