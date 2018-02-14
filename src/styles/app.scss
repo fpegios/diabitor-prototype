@@ -4,11 +4,7 @@
 @import '_mixins';
 @import '_mediaqueries';
 @import '_normalize';
-
-.page {
-    height: 100%;
-    width: 100%;
-}
+@import 'pages/layout.scss';
 
 .hidden {
     display: none!important;
@@ -16,6 +12,10 @@
 
 .visible {
     display: block!important;
+}
+
+.setup {
+    @import 'pages/setup.scss';
 }
 
 .login {
