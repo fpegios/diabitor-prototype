@@ -6,6 +6,13 @@
 @import '_normalize';
 @import 'pages/layout.scss';
 
+.page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .hidden {
     display: none!important;
 }
