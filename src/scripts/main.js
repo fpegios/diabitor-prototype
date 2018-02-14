@@ -3,7 +3,7 @@ $( "#open-monitor-btn" ).click(function() {
     show(".monitor");
 });
 
-$( "#open-login-btn" ).click(function() {
+$( "#open-login" ).click(function() {
     hide(".monitor");
     show(".login");
 });

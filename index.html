@@ -14,7 +14,7 @@
 </head>
 <body>
     
-    <div class="setup page">
+    <div class="setup page hidden">
         <div class="header">
             <h2>diabitor</h2>
         </div>
@@ -23,15 +23,21 @@
         </div>
     </div>
 
-    <div class="login page hidden">
+    <div class="login page">
         <h1>Hello Diabitor!</h1>
         <p>HELLO LOGIN</p>
         <button id="open-monitor-btn">OPEN MONITOR</button>
     </div>
     
     <div class="monitor page hidden">
-        <p>HELLO MONITOR</p>
-        <button id="open-login-btn">OPEN LOGIN</button>
+        <div class="header">
+            <h2>diabitor</h2>
+        </div>
+        <div class="body">
+            <img id="open-login" src="assets/circle.png">
+            <h2>monitor</h2>
+        </div>
+        <div class="footer"></div>
     </div>
 
     <!-- SCRIPTS -->
