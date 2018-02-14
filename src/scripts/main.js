@@ -35,8 +35,3 @@ function show(element){
     $(".active").removeClass("active").addClass("hidden");
     $( element).removeClass("hidden").addClass("active");
 }
-
-function hide(element){
-    $( element).removeClass("visible");
-    $( element).addClass("hidden");
-}
