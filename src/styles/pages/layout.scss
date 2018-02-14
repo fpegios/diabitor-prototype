@@ -7,20 +7,56 @@
         font-family: Nexa-Bold;
         color: $red;
     }
-}
 
-.body {
-
-    h2 {
-        font-family: Nexa-Bold;
-        color: $red;
+    .back-btn {
+        width: 10px;
+        height: 10px;
         position: absolute;
-        top: 47%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 32px;
+        left: 12px;
+        border: 1px solid red;
     }
 }
 
-.footer {
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 
+.footer {
+    border-top: 1px solid $light-grey;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+
+    .tab {
+        
+        flex-grow: 1;
+        width: 33.333333%;
+
+        img {
+            height: 30px;
+        }
+
+        span {
+            font-family: Lato;
+            font-size: 14px;
+            color: $light-grey;
+
+            &.grey {
+                color: $light-grey; 
+            }
+
+            &.red {
+                color: $red; 
+            }
+        }
+
+        .column {
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }

@@ -39,26 +39,32 @@
     </div>
 
     <!-- MEASUREMENT -->
-    <div class="measurement page">
+    <div class="measurement page hidden">
         <div class="header">
             <h2>diabitor</h2>
+            <div class="back-btn"></div>
         </div>
         <div class="body">
             <div class="container">
                 <div class="column">
-                    <img src="assets/glucose.png" alt="">
+                    <div class="glucose">
+                        <img src="assets/glucose.png" alt="">
+                    </div>
+                    <div class="line">
+                        <img src="assets/line.png" alt="">
+                    </div>
+                    <div class="glucose-value">
+                        <div class="column">
+                            <span class="title">glucose (mmol/l)</span>
+                            <span class="value">8.2</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="login page">
-        <h1>Hello Diabitor!</h1>
-        <p>HELLO LOGIN</p>
-        <button id="open-monitor-btn">OPEN MONITOR</button>
-    </div>
     
-    <div class="monitor page hidden">
+    <div class="monitor page">
         <div class="header">
             <h2>diabitor</h2>
         </div>
@@ -66,7 +72,36 @@
             <img id="open-login" src="assets/circle.png">
             <h2>monitor</h2>
         </div>
-        <div class="footer"></div>
+        <div class="footer">
+            <div class="container">
+                <div class="row space-between">
+                    <div id="monitor-btn" class="tab">
+                        <div class="container">
+                            <div class="column">
+                                <img src="assets/heart_red.png" alt="">
+                                <span class="red">Monitor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="history-btn" class="tab">
+                        <div class="container">
+                            <div class="column">
+                                <img src="assets/analytics_grey.png" alt="">
+                                <span class="grey">History</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profile-btn" class="tab">
+                        <div class="container">
+                            <div class="column">
+                                <img src="assets/user_grey.png" alt="">
+                                <span class="grey">Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- SCRIPTS -->
