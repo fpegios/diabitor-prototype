@@ -3,9 +3,14 @@
 @import '_mediaqueries';
 @import '_normalize';
 @import 'pages/layout.scss';
+@import 'pages/preloader.scss';
 
 .hidden {
     display: none!important;
+}
+
+.transparent {
+    opacity: 0;
 }
 
 .setup {
@@ -13,21 +18,25 @@
 }
 
 .monitor {
-    @import 'pages/monitor.scss';
+    @import 'pages/kid-mode/monitor.scss';
 }
 
 .measurement {
-    @import 'pages/measurement.scss';
+    @import 'pages/kid-mode/measurement.scss';
 }
 
 .history {
-    @import 'pages/history.scss';
+    @import 'pages/kid-mode/history.scss';
 }
 
 .profile {
-    @import 'pages/profile.scss';
+    @import 'pages/kid-mode/profile.scss';
 }
 
 .parent-status {
-    @import 'pages/parent-status.scss';
+    @import 'pages/parent-mode/parent-status.scss';
+}
+
+.parent-history {
+    @import 'pages/parent-mode/parent-history.scss';
 }
