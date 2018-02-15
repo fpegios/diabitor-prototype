@@ -11,7 +11,7 @@ $( "#kid-mode" ).click(function() {
 });
 
 $( "#parent-mode" ).click(function() {
-    show(".monitor");
+    show(".parent-status");
 });
 
 $( "#monitor-btn" ).click(function() {
@@ -42,6 +42,14 @@ $( ".history-tab" ).click(function() {
 
 $( ".profile-tab" ).click(function() {
     show(".profile");
+});
+
+$( ".parent-status-tab" ).click(function() {
+    show(".parent-status");
+});
+
+$( ".parent-history-tab" ).click(function() {
+    show(".parent-history");
 });
 
 // FUNCTIONS
