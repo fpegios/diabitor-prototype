@@ -1,3 +1,11 @@
+// HIDE PRELOADER WHEN EVERYTHING IS LOADED
+$(window).on('load', function() {
+    $('.preloader-container').addClass('transparent');
+    $(".preloader-container").on("webkitTransitionEnd otransitonend oTransitionEnd msTransitionEnd transitionend", function(event) {
+        $('.preloader-container').remove();
+    });
+});
+
 // HEADER CONTROLLER
 // 
 $( ".measurement .left-action-btn" ).click(function() {

@@ -1,0 +1,33 @@
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    transition: opacity .2s linear .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    .preloader {
+        border: 16px solid $dark-white;
+        border-radius: 50%;
+        border-top: 16px solid $red;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
