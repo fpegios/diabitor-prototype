@@ -13,6 +13,11 @@
     opacity: 0;
 }
 
+.sign-up {
+    @import 'pages/sign-up.scss';
+}
+
+
 .setup {
     @import 'pages/setup.scss';
 }

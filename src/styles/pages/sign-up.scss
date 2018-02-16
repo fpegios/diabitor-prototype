@@ -1,0 +1,22 @@
+.body {
+    .signup-button {
+        width: 80%;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family: Nexa-Light;
+        color: white;
+        align-items: center;
+        background: red;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .boxed-textarea {
+        padding: 9px;
+        margin: 9px;
+        width: 80%;
+        border: 1px solid $light-grey;
+        color: $light-grey; 
+    }
+}
