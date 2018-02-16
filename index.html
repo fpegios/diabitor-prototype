@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Diabitor">
     <meta name="keywords" content="Diabitor4">
     <meta name="author" content="Author">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>index.html</title>
 
@@ -19,271 +21,27 @@
     <div class="preloader-container">
         <div class="preloader"></div>
     </div>
-    
-    <!-- SETUP -->
-    <div class="setup page active">
-        <div class="header">
-            <div class="left-action-btn"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <div id="kid-mode" class="column">
-                <img class="icon" src="assets/kid.png" alt="">
-                <span class="text">kid</span>
-            </div>
-            <div id="parent-mode" class="column">
-                <div class="row">
-                    <img class="icon" src="assets/parent-grey.png" alt="">
-                    <img class="icon" src="assets/mama-grey.png" alt="">
-                </div>
-                <span class="text">parent</span>
-            </div>
-        </div>
-    </div>
 
+    <!-- SETUP -->
+    <div data-include="setup"></div>
+    
     <!-- MONITOR -->
-    <div class="monitor page hidden">
-        <div class="header">
-            <div class="left-action-btn"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <img id="monitor-btn" src="assets/monitor-circle.png">
-        </div>
-        <div class="footer">
-            <div class="monitor-tab column match-parent-height">
-                <img src="assets/heart-red.png" alt="">
-                <span class="red">Monitor</span>
-            </div>
-            <div class="history-tab column match-parent-height">
-                <img src="assets/analytics-grey.png" alt="">
-                <span class="grey">History</span>
-            </div>
-            <div class="profile-tab column match-parent-height">
-                <img src="assets/user-grey.png" alt="">
-                <span class="grey">Profile</span>
-            </div>
-        </div>
-    </div>
+    <div data-include="monitor"></div>
 
     <!-- MEASUREMENT -->
-    <div class="measurement page hidden">
-        <div class="header">
-            <div class="left-action-btn">
-                <img src="assets/left-arrow.png" alt="">
-            </div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <div class="glucose-bottle">
-                <img src="assets/glucose.png" alt="">
-            </div>
-            <div class="line">
-                <img src="assets/line.png" alt="">
-            </div>
-            <div class="glucose-data">
-                <div class="column">
-                    <span class="title">glucose (mmol/l)</span>
-                    <span class="value">8.2</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div data-include="measurement"></div>
 
     <!-- HISTORY -->
-    <div class="history page hidden">
-        <div class="header">
-            <div class="left-action-btn"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <div class="row match-parent-width measurements">
-                <div id="measurement-1" class="column">
-                    <img class="glucose-bottle" src="assets/tube-medicine.png" alt="">
-                    <span class="value">8.2</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">14:26</span>
-                    </div>
-                </div>
-                <div id="measurement-2"  class="column">
-                    <img class="glucose-bottle" src="assets/tube-ok.png" alt="">
-                    <span class="value">5.2</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">20:22</span>
-                    </div>
-                </div>
-                <div id="measurement-3"  class="column">
-                    <img class="glucose-bottle" src="assets/tube-ok.png" alt="">
-                    <span class="value">4.7</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">11:35</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row match-parent-width graph">
-                <img src="assets/graph-date-glucose.png" alt="">
-            </div>
-        </div>
-        <div class="footer">
-            <div class="monitor-tab column match-parent-height">
-                <img src="assets/heart-grey.png" alt="">
-                <span class="grey">Monitor</span>
-            </div>
-            <div class="history-tab column match-parent-height">
-                <img src="assets/analytics-red.png" alt="">
-                <span class="red">History</span>
-            </div>
-            <div class="profile-tab column match-parent-height">
-                <img src="assets/user-grey.png" alt="">
-                <span class="grey">Profile</span>
-            </div>
-        </div>
-    </div>
+    <div data-include="history"></div>
 
     <!-- PROFILE -->
-    <div class="profile page hidden">
-        <div class="header">
-            <div class="left-action-btn">
-                <img id="cancel-btn" src="assets/cancel.png" style="visibility: hidden;">
-            </div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn">
-                <img id="edit-btn" src="assets/edit.png" alt="">
-                <img id="save-btn" src="assets/save.png" style="visibility: hidden;">
-            </div>
-        </div>
-        <div class="body">
-            <img src="assets/ghost-circle.png">
-            <span class="username">Hi, Nick!</span>
-            <div class="user-details">
-                <div class="row">
-                    <span>Name</span>
-                    <span>Nick Johnson</span>
-                </div>
-                <div class="row">
-                    <span>Age</span>
-                    <span>11</span>
-                </div>
-                <div class="row">
-                    <span>Gender</span>
-                    <span>Male</span>
-                </div>
-                <div class="row">
-                    <span>ID</span>
-                    <span>JKL324</span>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="monitor-tab column match-parent-height">
-                <img src="assets/heart-grey.png" alt="">
-                <span class="grey">Monitor</span>
-            </div>
-            <div class="history-tab column match-parent-height">
-                <img src="assets/analytics-grey.png" alt="">
-                <span class="grey">History</span>
-            </div>
-            <div class="profile-tab column match-parent-height">
-                <img src="assets/user-red.png" alt="">
-                <span class="red">Profile</span>
-            </div>
-        </div>
-    </div>
+    <div data-include="profile"></div>
 
     <!-- PARENT STATUS -->
-    <div class="parent-status page hidden">
-        <div class="header">
-            <div class="left-action-btn"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <div class="kid-icon">
-                <img src="assets/parent-kid.png" alt="">
-            </div>
-            <span class="kid-name">Nick</span>
-            <div class="line">
-                <img src="assets/line.png" alt="">
-            </div>
-            <div class="glucose-data">
-                <div class="column">
-                    <span class="title">glucose (mmol/l)</span>
-                    <span class="value">8.2</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">20:22</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="parent-status-tab column match-parent-height">
-                <img src="assets/heart-red.png" alt="">
-                <span class="red">Status</span>
-            </div>
-            <div class="parent-history-tab column match-parent-height">
-                <img src="assets/analytics-grey.png" alt="">
-                <span class="grey">History</span>
-            </div>
-        </div>
-    </div>
+    <div data-include="parent-status"></div>
 
     <!-- PARENT HISTORY -->
-    <div class="parent-history page hidden">
-        <div class="header">
-            <div class="left-action-btn"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action-btn"></div>
-        </div>
-        <div class="body">
-            <div class="row match-parent-width measurements">
-                <div id="measurement-1" class="column">
-                    <img class="glucose-bottle" src="assets/tube-medicine.png" alt="">
-                    <span class="value">8.2</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">14:26</span>
-                    </div>
-                </div>
-                <div id="measurement-2"  class="column">
-                    <img class="glucose-bottle" src="assets/tube-ok.png" alt="">
-                    <span class="value">5.2</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">20:22</span>
-                    </div>
-                </div>
-                <div id="measurement-3"  class="column">
-                    <img class="glucose-bottle" src="assets/tube-ok.png" alt="">
-                    <span class="value">4.7</span>
-                    <div class="row">
-                        <span class="date">8/2</span>
-                        <span class="day">11:35</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row match-parent-width graph">
-                <img src="assets/graph-date-glucose.png" alt="">
-            </div>
-        </div>
-        <div class="footer">
-            <div class="parent-status-tab column match-parent-height">
-                <img src="assets/heart-grey.png" alt="">
-                <span class="grey">Status</span>
-            </div>
-            <div class="parent-history-tab column match-parent-height">
-                <img src="assets/analytics-red.png" alt="">
-                <span class="red">History</span>
-            </div>
-        </div>
-    </div>
+    <div data-include="parent-history"></div>
 
     <!-- SCRIPTS -->
     <script src="dist/js/main.min.js"></script>
