@@ -34,6 +34,10 @@
     @import 'pages/kid-mode/history.scss';
 }
 
+.history-measurement {
+    @import 'pages/kid-mode/history-measurement.scss';
+}
+
 .profile {
     @import 'pages/kid-mode/profile.scss';
 }
@@ -44,4 +48,8 @@
 
 .parent-history {
     @import 'pages/parent-mode/parent-history.scss';
+}
+
+.parent-history-measurement {
+    @import 'pages/parent-mode/parent-history-measurement.scss';
 }
