@@ -28,8 +28,13 @@ function initClickEvents() {
     });
     $( ".history-measurement .left-action-btn" ).click(function() {
         show(".history");
-        historyMeasurementKid = 0;
+        historyMeasurement = 0;
         $( ".history-measurement .nav-arrow.prev" ).hide();
+    });
+    $( ".parent-history-measurement .left-action-btn" ).click(function() {
+        show(".parent-history");
+        parentHistoryMeasurement = 0;
+        $( ".parent-history-measurement .nav-arrow.prev" ).hide();
     });
 
     // BODY
@@ -45,27 +50,50 @@ function initClickEvents() {
         show(".measurement");
     });
     $( ".history .meas-1" ).off().click(function() {
-        historyMeasurementKid = 0;
-        updateHistoryMeasurement("kid", historyMeasurementKid);
+        historyMeasurement = 0;
+        updateHistoryMeasurement("kid", historyMeasurement);
         show(".history-measurement");
     });
     $( ".history .meas-2" ).off().click(function() {
-        historyMeasurementKid = 1;
-        updateHistoryMeasurement("kid", historyMeasurementKid);
+        historyMeasurement = 1;
+        updateHistoryMeasurement("kid", historyMeasurement);
         show(".history-measurement");
     });
     $( ".history .meas-3" ).off().click(function() {
-        historyMeasurementKid = 2;
-        updateHistoryMeasurement("kid", historyMeasurementKid);
+        historyMeasurement = 2;
+        updateHistoryMeasurement("kid", historyMeasurement);
         show(".history-measurement");
     });
     $( ".history-measurement .nav-arrow.prev" ).off().click(function() {
-        historyMeasurementKid = historyMeasurementKid - 1;
-        updateHistoryMeasurement("kid", historyMeasurementKid);
+        historyMeasurement = historyMeasurement - 1;
+        updateHistoryMeasurement("kid", historyMeasurement);
     });
     $( ".history-measurement .nav-arrow.next" ).off().click(function() {
-        historyMeasurementKid = historyMeasurementKid + 1;
-        updateHistoryMeasurement("kid", historyMeasurementKid);
+        historyMeasurement = historyMeasurement + 1;
+        updateHistoryMeasurement("kid", historyMeasurement);
+    });
+    $( ".parent-history .meas-1" ).off().click(function() {
+        parentHistoryMeasurement = 0;
+        updateHistoryMeasurement("parent", parentHistoryMeasurement);
+        show(".parent-history-measurement");
+    });
+    $( ".parent-history .meas-2" ).off().click(function() {
+        parentHistoryMeasurement = 1;
+        updateHistoryMeasurement("parent", parentHistoryMeasurement);
+        show(".parent-history-measurement");
+    });
+    $( ".parent-history .meas-3" ).off().click(function() {
+        parentHistoryMeasurement = 2;
+        updateHistoryMeasurement("parent", parentHistoryMeasurement);
+        show(".parent-history-measurement");
+    });
+    $( ".parent-history-measurement .nav-arrow.prev" ).off().click(function() {
+        parentHistoryMeasurement = parentHistoryMeasurement - 1;
+        updateHistoryMeasurement("parent", parentHistoryMeasurement);
+    });
+    $( ".parent-history-measurement .nav-arrow.next" ).off().click(function() {
+        parentHistoryMeasurement = parentHistoryMeasurement + 1;
+        updateHistoryMeasurement("parent", parentHistoryMeasurement);
     });
     
     // FOOTER
@@ -107,8 +135,8 @@ function show(element){
 
 // initialize variables
 function initVariables() {
-    historyMeasurementKid = 0;
-    ParentHistoryMeasurement = 0;
+    historyMeasurement = 0;
+    parentHistoryMeasurement = 0;
 }
 
 // update history measurement page
@@ -130,6 +158,20 @@ function updateHistoryMeasurement(mode, id) {
         $( ".history-measurement .date").html(measurements[id].date);
         $( ".history-measurement .day").html(measurements[id].day);
     } else {
-
+        if (id == 0) {
+            $( ".parent-history-measurement .nav-arrow.prev" ).hide();
+            $( ".parent-history-measurement .nav-arrow.next" ).show();
+        } else if (id == 1) {
+            $( ".parent-history-measurement .nav-arrow.prev" ).show();
+            $( ".parent-history-measurement .nav-arrow.next" ).show();
+        } else if (id == 2) {
+            $( ".parent-history-measurement .nav-arrow.prev" ).show();
+            $( ".parent-history-measurement .nav-arrow.next" ).hide();
+        }
+        $( ".parent-history-measurement .glucose-bottle img").attr('src', measurements[id].img);
+        $( ".parent-history-measurement .message").html(measurements[id].message);
+        $( ".parent-history-measurement .value").html(measurements[id].value);
+        $( ".parent-history-measurement .date").html(measurements[id].date);
+        $( ".parent-history-measurement .day").html(measurements[id].day);
     }
 }
