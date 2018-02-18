@@ -21,6 +21,10 @@
         border: 1px solid $lighter-grey;
         color: $light-grey;
     }
+
+    .input-text::placeholder {
+        color: $light-grey;
+    }
     
     .disclaimer-text {
         color: $light-grey;
