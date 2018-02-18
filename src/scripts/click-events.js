@@ -17,7 +17,11 @@ function initClickEvents() {
     });
 
     // BODY
-    // 
+    //
+    $( "#signup-btn" ).click(function() {
+        showComponent("setup");
+    });
+
     $( "#kid-mode" ).click(function() {
         showComponent("monitor");
     });

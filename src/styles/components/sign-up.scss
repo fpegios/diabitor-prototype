@@ -1,41 +1,40 @@
-[data-component="sign-up"]{
-    .body {
+.body {
 
-        .signup-button {
-            width: 75%;
-            text-align: center;
-            border-radius: 8px;
-            font-size: 20px;
-            font-family: Nexa-Light;
-            color: white;
-            align-items: center;
-            background: red;
-            padding: 10px;
-            margin: 10px;
-        }
-        
-        .boxed-textarea {
-            padding: 10px;
-            margin: 9px;
-            width: 75%;
-            border: 1px solid $lighter-grey;
-            color: $light-grey; 
-        }
-        
-        .disclaimer-text {
+    #signup-btn {
+        width: 75%;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family: Nexa-Light;
+        color: white;
+        align-items: center;
+        background: red;
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    .input-text {
+        padding: 10px;
+        margin: 9px;
+        justify-content: center;
+        width: 75%;
+        border: 1px solid $lighter-grey;
+        color: $light-grey;
+    }
+    
+    .disclaimer-text {
+        color: $light-grey;
+        margin: 5px;
+        font-size: 11px;
+
+        .a:link {
+            text-decoration: none;
             color: $light-grey;
-            margin: 5px;
-            font-size: 11px;
-
-            .a:link {
-                text-decoration: none;
-                color: $light-grey;
-            }
         }
-        
-        .textarea h2{
-            color: $light-grey; 
-            font-family: Nexa-Light;
-        }
+    }
+    
+    .textarea h2{
+        color: $lighter-grey; 
+        font-family: Nexa-Light;
     }
 }
