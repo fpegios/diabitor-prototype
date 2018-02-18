@@ -96,4 +96,22 @@ function initClickEvents() {
     $( ".parent-history-tab" ).click(function() {
         showComponent("parent-history");
     });
+
+    // SIGNUP
+    // 
+    $( "#sign-in" ).click(function() {
+        showComponent("setup");
+        showModal("sign-in");
+    });
+
+    // SIGNIN
+    // 
+    $( getDataComponent("sign-in") + " .ok").click(function() {
+        showComponent("setup");
+    });
+
+    $( getDataComponent("sign-in") + " .cancel").click(function() {
+        showComponent("sign-up");
+    });
+    
 }
