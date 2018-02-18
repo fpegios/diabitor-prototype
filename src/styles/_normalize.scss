@@ -13,3 +13,11 @@ body {
 div {
     display: unset;
 }
+
+.hidden {
+    display: none!important;
+}
+
+.transparent {
+    opacity: 0;
+}

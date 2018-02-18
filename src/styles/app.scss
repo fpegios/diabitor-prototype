@@ -2,54 +2,17 @@
 @import '_fonts';
 @import '_mediaqueries';
 @import '_normalize';
-@import 'pages/layout.scss';
-@import 'pages/preloader.scss';
 
-.hidden {
-    display: none!important;
-}
-
-.transparent {
-    opacity: 0;
-}
-
-.sign-up {
-    @import 'pages/sign-up.scss';
-}
-
-
-.setup {
-    @import 'pages/setup.scss';
-}
-
-.monitor {
-    @import 'pages/kid-mode/monitor.scss';
-}
-
-.measurement {
-    @import 'pages/kid-mode/measurement.scss';
-}
-
-.history {
-    @import 'pages/kid-mode/history.scss';
-}
-
-.history-measurement {
-    @import 'pages/kid-mode/history-measurement.scss';
-}
-
-.profile {
-    @import 'pages/kid-mode/profile.scss';
-}
-
-.parent-status {
-    @import 'pages/parent-mode/parent-status.scss';
-}
-
-.parent-history {
-    @import 'pages/parent-mode/parent-history.scss';
-}
-
-.parent-history-measurement {
-    @import 'pages/parent-mode/parent-history-measurement.scss';
-}
+@import 'layout.scss';
+@import 'preloader.scss';
+@import 'components/sign-up.scss';
+@import 'components/sign-in.scss';
+@import 'components/setup.scss';
+@import 'components/kid-mode/monitor.scss';
+@import 'components/kid-mode/measurement.scss';
+@import 'components/kid-mode/history.scss';
+@import 'components/kid-mode/history-measurement.scss';
+@import 'components/kid-mode/profile.scss';
+@import 'components/parent-mode/parent-status.scss';
+@import 'components/parent-mode/parent-history.scss';
+@import 'components/parent-mode/parent-history-measurement.scss';
