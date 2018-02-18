@@ -12,7 +12,7 @@ $(window).on('load', function() {
 function includeComponents() { 
     var components = $('[data-component]');
     $.each(components, function(){
-        var file = 'src/components/' + $(this).data('component') + '.html';
+        var file = 'dist/html/' + $(this).data('component') + '.html';
         $(this).load(file, function() {
             initClickEvents();
         });
