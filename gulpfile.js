@@ -26,7 +26,7 @@ var paths = {
     dest: 'dist/js/'
   },
   views: {
-    src: 'src/views/**/*.html'
+    src: 'src/components/**/*.html'
   }
 };
 

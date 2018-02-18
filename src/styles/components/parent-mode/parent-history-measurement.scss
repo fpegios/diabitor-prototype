@@ -1,0 +1,73 @@
+[data-component="parent-history-measurement"]{
+    .body {
+
+        .nav-arrow {
+            position: absolute;
+            top: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Nexa-Light;
+            img {
+                width: 15px;
+            }
+            &.prev {
+                left: 5%;
+            }
+            &.next {
+                right: 5%;
+            }
+        }
+        .glucose-bottle {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            img {
+                height: 40vh;
+            }
+        }
+
+        .line {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 2vh 0;
+            img {
+                width: 50%;
+                height: 1px;
+            }
+        }
+        .message {
+            padding: 2vh 0 0 0;
+            font-family: Lato;
+            font-size: 14px;
+            color: $light-grey;
+        }
+
+        .glucose-data {
+            .title {
+                font-family: Lato;
+                font-size: 14px;
+                color: $red;   
+            }
+            .value {
+                color: $red;
+                font-family: Lato-Black;
+                font-size: 50px;
+                font-weight: bold;
+            }
+            span {
+                margin-top: 1vh;
+                font-family: Lato-Regular;
+                font-size: 12px;
+                color: $light-grey;
+                &.date {
+                    
+                }
+                &.day {
+                    margin-left: 4%;
+                }
+            }
+        }
+    }
+}

@@ -9,3 +9,15 @@ body {
     height: 100%;
     width: 100%;
 }
+
+div {
+    display: unset;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.transparent {
+    opacity: 0;
+}

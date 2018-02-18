@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Diabitor">
-    <meta name="keywords" content="Diabitor4">
+    <meta name="keywords" content="Diabitor">
     <meta name="author" content="Author">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>index.html</title>
 
     <!-- STYLES -->
@@ -13,129 +16,48 @@
     <!-- STYLES  --> 
 </head>
 <body>
-    
-    <!-- SETUP -->
-    <div class="setup page active">
-        <div class="header">
-            <div class="left-action"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action"></div>
-        </div>
-        <div class="body">
-            <div id="kid-mode" class="column">
-                <img class="icon" src="assets/kid.png" alt="">
-                <span class="text">kid</span>
-            </div>
-            <div id="parent-mode" class="column">
-                <div class="row">
-                    <img class="icon" src="assets/parent-grey.png" alt="">
-                    <img class="icon" src="assets/mama-grey.png" alt="">
-                </div>
-                <span class="text">parent</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- MONITOR PAGE -->
-    <div class="monitor page hidden">
-        <div class="header">
-            <div class="left-action"></div>
-            <div class="title">diabitor</div>
-            <div class="right-action"></div>
-        </div>
-        <div class="body">
-            <img id="monitor-btn" src="assets/monitor-circle.png">
-        </div>
-        <div class="footer">
-            <div class="monitor-tab column match-parent-height">
-                <img src="assets/heart-red.png" alt="">
-                <span class="red">Monitor</span>
-            </div>
-            <div class="history-tab column match-parent-height">
-                <img src="assets/analytics-grey.png" alt="">
-                <span class="grey">History</span>
-            </div>
-            <div class="profile-tab column match-parent-height">
-                <img src="assets/user-grey.png" alt="">
-                <span class="grey">Profile</span>
-            </div>
-        </div>
+    <!-- PRELOADER -->
+    <div class="preloader-container">
+        <div class="preloader"></div>
     </div>
+    
+    <!-- SIGNUP -->
+    <div data-component="sign-up" class="active"></div>
+
+    <!-- SIGNIN -->
+    <div data-component="sign-in" class="hidden"></div>
+
+    <!-- SETUP -->
+    <div data-component="setup" class="hidden"></div>
+
+    <!-- MONITOR -->
+    <div data-component="monitor" class="hidden"></div>
 
     <!-- MEASUREMENT -->
-    <div class="measurement page hidden">
-        <div class="header">
-            <div class="left-action">
-                <img src="assets/left-arrow.png" alt="">
-            </div>
-            <div class="title">diabitor</div>
-            <div class="right-action"></div>
-        </div>
-        <div class="body">
-            <div class="glucose-bottle">
-                <img src="assets/glucose.png" alt="">
-            </div>
-            <div class="line">
-                <img src="assets/line.png" alt="">
-            </div>
-            <div class="glucose-data">
-                <div class="column">
-                    <span class="title">glucose (mmol/l)</span>
-                    <span class="value">8.2</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div data-component="measurement" class="hidden"></div>
+
+    <!-- HISTORY -->
+    <div data-component="history" class="hidden"></div>
+    
+    <!-- HISTORY MEASUREMENT-->
+    <div data-component="history-measurement" class="hidden"></div>
 
     <!-- PROFILE -->
-    <div class="profile page hidden">
-        <div class="header">
-            <div class="left-action">
-                <img id="cancel-btn" src="assets/cancel.png" style="visibility: hidden;">
-            </div>
-            <div class="title">diabitor</div>
-            <div class="right-action">
-                <img id="edit-btn" src="assets/edit.png" alt="">
-                <img id="save-btn" src="assets/save.png" style="visibility: hidden;">
-            </div>
-        </div>
-        <div class="body">
-            <img src="assets/ghost-circle.png">
-            <span class="username">Hi, Nick!</span>
-            <div class="user-details">
-                <div class="row">
-                    <span>Name</span>
-                    <span>Nick Johnson</span>
-                </div>
-                <div class="row">
-                    <span>Age</span>
-                    <span>11</span>
-                </div>
-                <div class="row">
-                    <span>Gender</span>
-                    <span>Male</span>
-                </div>
-                <div class="row">
-                    <span>ID</span>
-                    <span>JKL324</span>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="monitor-tab column match-parent-height">
-                <img src="assets/heart-grey.png" alt="">
-                <span class="grey">Monitor</span>
-            </div>
-            <div class="history-tab column match-parent-height">
-                <img src="assets/analytics-grey.png" alt="">
-                <span class="grey">History</span>
-            </div>
-            <div class="profile-tab column match-parent-height">
-                <img src="assets/user-red.png" alt="">
-                <span class="red">Profile</span>
-            </div>
-        </div>
-    </div>
+    <div data-component="profile" class="hidden"></div>
+
+    <!-- PARENT STATUS -->
+    <div data-component="parent-status" class="hidden"></div>
+
+    <!-- PARENT HISTORY -->
+    <div data-component="parent-history" class="hidden"></div>
+
+    <!-- PARENT HISTORY MEASUREMENT -->
+    <div data-component="parent-history-measurement" class="hidden"></div>
+
+    <!-- JSON DATA -->
+    <script type="text/javascript" src="data/measurements.json"></script>
+    <!-- JSON DATA -->
 
     <!-- SCRIPTS -->
     <script src="dist/js/main.min.js"></script>

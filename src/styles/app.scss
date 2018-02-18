@@ -2,24 +2,17 @@
 @import '_fonts';
 @import '_mediaqueries';
 @import '_normalize';
-@import 'pages/layout.scss';
 
-.hidden {
-    display: none!important;
-}
-
-.setup {
-    @import 'pages/setup.scss';
-}
-
-.monitor {
-    @import 'pages/monitor.scss';
-}
-
-.measurement {
-    @import 'pages/measurement.scss';
-}
-
-.profile {
-    @import 'pages/profile.scss';
-}
+@import 'layout.scss';
+@import 'preloader.scss';
+@import 'components/sign-up.scss';
+@import 'components/sign-in.scss';
+@import 'components/setup.scss';
+@import 'components/kid-mode/monitor.scss';
+@import 'components/kid-mode/measurement.scss';
+@import 'components/kid-mode/history.scss';
+@import 'components/kid-mode/history-measurement.scss';
+@import 'components/kid-mode/profile.scss';
+@import 'components/parent-mode/parent-status.scss';
+@import 'components/parent-mode/parent-history.scss';
+@import 'components/parent-mode/parent-history-measurement.scss';
