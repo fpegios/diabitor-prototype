@@ -33,6 +33,11 @@ function showComponent(component) {
     $(getDataComponent(component)).addClass("active").removeClass("hidden");
 }
 
+// show component like a modal on top of the other
+function showModal(component) {
+    $(getDataComponent(component)).addClass("active").removeClass("hidden");
+}
+
 // initialize variables
 function initVariables() {
     historyMeasurement = 0;
