@@ -1,6 +1,5 @@
 [data-component="measurement"]{
     .body {
-        margin-bottom: $footer-height;
 
         .glucose-bottle {
             width: 100%;
@@ -33,6 +32,28 @@
                 font-family: Lato-Black;
                 font-size: 50px;
                 font-weight: bold;
+            }
+        }
+
+        .glucose-message {
+            width: 50%;
+            .row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .ghost-img {
+                    height: 45px;
+                    img {
+                        height: 100%;
+                    }
+                }
+                .message {
+                    display: inline-block;
+                    margin-left: 8%;
+                    font-family: Lato-Black;
+                    font-size: 20px;
+                    color: $red; 
+                }
             }
         }
     }
