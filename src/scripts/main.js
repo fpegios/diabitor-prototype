@@ -5,7 +5,9 @@ $( document ).ready(function() {
 
 // HIDE PRELOADER WHEN EVERYTHING IS LOADED
 $(window).on('load', function() {
-    hidePreloader();
+    setTimeout(function() {
+        hidePreloader();
+    }, 2000);
 });
 
 // generate html components

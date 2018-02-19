@@ -1,44 +1,47 @@
-.body {
+[data-component="sign-up"]{
+    .body {
+        margin-bottom: $footer-height;
 
-    #signup-btn {
-        width: 75%;
-        text-align: center;
-        border-radius: 8px;
-        font-size: 20px;
-        font-family: Nexa-Light;
-        color: white;
-        align-items: center;
-        background: red;
-        padding: 10px;
-        margin: 10px;
-    }
-    
-    .input-text {
-        padding: 10px;
-        margin: 9px;
-        justify-content: center;
-        width: 75%;
-        border: 1px solid $lighter-grey;
-        color: $light-grey;
-    }
-
-    .input-text::placeholder {
-        color: $light-grey;
-    }
-    
-    .disclaimer-text {
-        color: $light-grey;
-        margin: 5px;
-        font-size: 11px;
-
-        .a:link {
-            text-decoration: none;
+        #signup-btn {
+            width: 75%;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 20px;
+            font-family: Nexa-Light;
+            color: white;
+            align-items: center;
+            background: red;
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        .input-text {
+            padding: 10px;
+            margin: 9px;
+            justify-content: center;
+            width: 75%;
+            border: 1px solid $lighter-grey;
             color: $light-grey;
         }
-    }
-    
-    .textarea h2{
-        color: $lighter-grey; 
-        font-family: Nexa-Light;
+
+        .input-text::placeholder {
+            color: $light-grey;
+        }
+        
+        .disclaimer-text {
+            color: $light-grey;
+            margin: 5px;
+            font-size: 11px;
+
+            .a:link {
+                text-decoration: none;
+                color: $light-grey;
+            }
+        }
+        
+        .textarea h2{
+            color: $lighter-grey; 
+            font-family: Nexa-Light;
+        }
     }
 }

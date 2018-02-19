@@ -11,15 +11,18 @@
     justify-content: center;
     z-index: 2;
 
-    .preloader {
-        border: 16px solid $dark-white;
-        border-radius: 50%;
-        border-top: 16px solid $red;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
+    img {
+        width: 100%;
     }
+    // .preloader {
+    //     border: 16px solid $dark-white;
+    //     border-radius: 50%;
+    //     border-top: 16px solid $red;
+    //     width: 120px;
+    //     height: 120px;
+    //     -webkit-animation: spin 2s linear infinite; /* Safari */
+    //     animation: spin 2s linear infinite;
+    // }
 }
   
 @-webkit-keyframes spin {
