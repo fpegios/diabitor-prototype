@@ -1,12 +1,13 @@
 @import '_colors';
 @import '_fonts';
+@import '_variables';
 @import '_mediaqueries';
 @import '_normalize';
 
 @import 'layout.scss';
 @import 'preloader.scss';
 @import 'components/sign-up.scss';
-@import 'components/sign-in.scss';
+@import 'components/id-sign-in.scss';
 @import 'components/setup.scss';
 @import 'components/kid-mode/monitor.scss';
 @import 'components/kid-mode/measurement.scss';

@@ -1,14 +1,14 @@
 [data-component="setup"]{
     .body {
-        margin-bottom: 10vh;
+        margin-bottom: $footer-height;
 
         .column {
             padding: 5% 0;
             &:first-child {
-                border-top: 1px solid $light-grey;
+                border-top: 1px solid $lighter-grey;
             }
             &:last-child {
-                border: 1px solid $light-grey;
+                border: 1px solid $lighter-grey;
             }
         }
 
@@ -21,7 +21,7 @@
         
         .text {
             margin-top: 5%;
-            font-family: Lato;
+            font-family: Lato-Regular;
             font-size: 22px;
             color: $light-grey;
         }

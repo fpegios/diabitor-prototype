@@ -1,6 +1,6 @@
 [data-component="measurement"]{
     .body {
-        margin-bottom: 10vh;
+        margin-bottom: $footer-height;
 
         .glucose-bottle {
             width: 100%;
@@ -24,7 +24,7 @@
 
         .glucose-data {
             .title {
-                font-family: Lato;
+                font-family: Lato-Regular;
                 font-size: 14px;
                 color: $red;   
             }
