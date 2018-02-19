@@ -17,17 +17,37 @@ function initClickEvents() {
     });
 
     // BODY
-    // 
-    $( "#kid-mode" ).click(function() {
+    //
+    $( "#signup-btn" ).click(function() {
         showComponent("monitor");
     });
+
+    $( "#signin-btn" ).click(function() {
+        showComponent("monitor");
+    });
+
+    $( "#kid-mode" ).click(function() {
+        showComponent("sign-up");
+    });
     $( "#parent-mode" ).click(function() {
-        showComponent("parent-status");
+        showModal("id-sign-in");
+    });
+
+    $( "#parent-mode" ).click(function() {
+        showModal("id-sign-in");
     });
     
+    $( getDataComponent("id-sign-in") + " .ok" ).off().click(function() {
+        showComponent("parent-status");
+    });
+    $( getDataComponent("id-sign-in") + " .cancel" ).off().click(function() {
+        showComponent("setup");
+    });
+
     $( "#monitor-btn" ).click(function() {
         showComponent("measurement");
     });
+    
     $( getDataComponent("history") + " .meas-1" ).off().click(function() {
         historyMeasurement = 0;
         updateHistoryMeasurement("kid", historyMeasurement);
@@ -95,23 +115,6 @@ function initClickEvents() {
     
     $( ".parent-history-tab" ).click(function() {
         showComponent("parent-history");
-    });
-
-    // SIGNUP
-    // 
-    $( "#sign-in" ).click(function() {
-        showComponent("setup");
-        showModal("sign-in");
-    });
-
-    // SIGNIN
-    // 
-    $( getDataComponent("sign-in") + " .ok").click(function() {
-        showComponent("setup");
-    });
-
-    $( getDataComponent("sign-in") + " .cancel").click(function() {
-        showComponent("sign-up");
     });
     
 }
