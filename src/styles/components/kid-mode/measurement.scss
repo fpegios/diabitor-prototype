@@ -1,6 +1,5 @@
 [data-component="measurement"]{
     .body {
-        margin-bottom: $footer-height;
 
         .glucose-bottle {
             width: 100%;
@@ -15,7 +14,7 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 4vh 0;
+            padding: 3vh 0;
             img {
                 width: 50%;
                 height: 1px;
@@ -23,6 +22,7 @@
         }
 
         .glucose-data {
+            transition: opacity .75s linear .75s;
             .title {
                 font-family: Lato-Regular;
                 font-size: 14px;
@@ -33,6 +33,29 @@
                 font-family: Lato-Black;
                 font-size: 50px;
                 font-weight: bold;
+            }
+        }
+
+        .glucose-message {
+            transition: opacity .75s linear .75s;
+            .row {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+                .ghost-img {
+                    height: 45px;
+                    img {
+                        height: 100%;
+                    }
+                }
+                .message {
+                    display: inline-block;
+                    margin-left: 8%;
+                    font-family: Lato-Black;
+                    font-size: 20px;
+                    color: $red; 
+                }
             }
         }
     }
