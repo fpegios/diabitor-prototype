@@ -8,6 +8,7 @@
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
+    overflow-y: auto;
 
     .header {
         width: 100%;
@@ -53,7 +54,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex: 1;
+        flex: 1 0 auto;
     }
 
     .footer {
