@@ -3,6 +3,9 @@ function initClickEvents() {
     // HEADER
     // 
     $( getDataComponent("measurement") + " .left-action-btn" ).click(function() {
+        $( getDataComponent("measurement") + " .glucose-data" ).addClass("transparent");
+        $( getDataComponent("measurement") + " .glucose-message" ).addClass("transparent");
+        $( getDataComponent("measurement") + " .glucose-bottle img").attr('src', "");
         showComponent("monitor");
     });
     $( getDataComponent("history-measurement") + " .left-action-btn" ).click(function() {
@@ -46,6 +49,14 @@ function initClickEvents() {
 
     $( "#monitor-btn" ).click(function() {
         showComponent("measurement");
+        $( getDataComponent("measurement") + " .glucose-bottle img").attr('src', "assets/tube.gif");
+
+        setTimeout(function() {
+            $( getDataComponent("measurement") + " .glucose-data" ).removeClass("transparent");
+            setTimeout(function() {
+                $( getDataComponent("measurement") + " .glucose-message" ).removeClass("transparent");
+            }, 750);
+        }, 2800);
     });
     
     $( getDataComponent("history") + " .meas-1" ).off().click(function() {
