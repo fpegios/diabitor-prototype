@@ -12,7 +12,7 @@
             img {
                 height: 5em;
             }
-        }
+        } // .kid-icon
 
         .question {
             padding: 1em 2.5em;
@@ -25,13 +25,15 @@
                 font-size: 26px;
                 color: $light-grey;
             }
-        }
-    }
+        } // .question
+    
+    } // .body
 
     .footer {
         border: none;
         .btn:nth-child(2) {
             margin-top: 1em;
         }
-    }
-}
+    } // .footer
+
+} // [data-component]
