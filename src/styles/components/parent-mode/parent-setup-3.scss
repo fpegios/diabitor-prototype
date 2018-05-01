@@ -1,10 +1,10 @@
-[data-component="parent-setup"]{
+[data-component="parent-setup-3"]{
 
     .body {
         align-items: flex-start;
         justify-content: flex-start;
         
-        .kid-icon {
+        .diet-icon {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -14,7 +14,7 @@
             }
         }
 
-        .kid-details {
+        .diet-details {
             width: 100%;
 
             .row {
@@ -23,12 +23,18 @@
 
                 .detail-type {
                     width: 50%;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        margin-left: 1em;
+                        height: 2em;
+                    }
                     span {
-                        padding-left: 1em;
                         font-family: Lato-Regular;
                         font-size: 18px;
                         color: $light-grey;
                         width: 40%;
+                        margin-left: 1em;
                     }
                 }
                 
