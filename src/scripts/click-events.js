@@ -8,6 +8,7 @@ function initClickEvents() {
         $( getDataComponent("measurement") + " .glucose-bottle img").attr('src', "");
         showComponent("monitor");
     });
+
     $( getDataComponent("history-measurement") + " .left-action-btn" ).click(function() {
         showComponent("history");
         historyMeasurement = 0;
@@ -21,30 +22,15 @@ function initClickEvents() {
 
     // BODY
     //
-    $( "#signup-btn" ).click(function() {
-        showComponent("monitor");
-    });
-
-    $( "#signin-btn" ).click(function() {
-        showComponent("monitor");
-    });
-
     $( "#kid-mode" ).click(function() {
-        showComponent("sign-up");
+        // showComponent("sign-up");
     });
-    $( "#parent-mode" ).click(function() {
-        showModal("id-sign-in");
-    });
-
-    $( "#parent-mode" ).click(function() {
-        showModal("id-sign-in");
-    });
-    
-    $( getDataComponent("id-sign-in") + " .ok" ).off().click(function() {
-        showComponent("parent-status");
-    });
-    $( getDataComponent("id-sign-in") + " .cancel" ).off().click(function() {
-        showComponent("setup");
+    $( "#parent-mode" ).off().click(function() {
+        if (kid.active) {
+            showComponent("parent-status");
+        } else {
+            showComponent("parent-setup");
+        }
     });
 
     $( "#monitor-btn" ).click(function() {
