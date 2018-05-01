@@ -34,6 +34,11 @@
                 font-family: Nexa-Bold;
                 font-size: 32px;
                 color: $red;
+                .subtitle {
+                    font-family: Lato-Regular;
+                    font-size: 30px;
+                    color: $light-grey;
+                }
             }
             &.right-action-btn{
                 position: absolute;
@@ -63,10 +68,15 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        flex: 1 0 auto;        
+        flex: 1 0 auto;  
+        
+        &.menu {
+            flex: unset;
+            height: $footer-height;
+        }
 
         img {
-            height: 4vh;
+            height: 1.5em;
         }
         span {
             font-family: Lato-Regular;
