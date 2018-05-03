@@ -33,25 +33,11 @@
                     color: $light-grey;
                     margin-top: .75em;
 
-                    &.day {
+                    &.time {
                         margin-left: .5em;
                     }
                 }
             }
-
-            .nav-arrow {
-                position: absolute;
-                top: 12em;
-                img {
-                    width: 15px;
-                }
-                &.prev {
-                    left: .5em;
-                }
-                &.next {
-                    right: .5em;
-                }
-            } // .nav-arrow
 
         } // .measurements
 

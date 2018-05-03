@@ -6,12 +6,35 @@ var kid = {
     active: false,
     name:"",
     age:"",
-    diabetetsType:"",
     regimenType:"",
     icRatio:"",
-    duringLunchMeasurement: false,
     breakfastTime: "",
     lunchTime: "",
     dinnerTime: "",
-    bedTime: ""
+    bedTime: "",
+    breakfastDose: "",
+    lunchDose: "",
+    dinnerDose: "",
+    bedDose: "",
 };
+
+var measurements = [];
+var measurement = []
+
+var measurementImage = [
+    "assets/tube-low.png",
+    "assets/tube-high.png",
+    "assets/tube-ok.png"
+];
+
+var measurementMessage = [
+    "NEED SUGAR!",
+    "MEDICINE!",
+    "OK!"
+];
+
+var measurementFeedbackImg = [
+    "assets/sugar.png",
+    "assets/dose.png",
+    "assets/ok.png"
+];

@@ -1,8 +1,7 @@
 [data-component="parent-settings"]{
 
     .body {
-        align-items: flex-start;
-        justify-content: flex-start;
+        flex: 1 0 auto;  
         
         .kid-icon {
             width: 100%;
