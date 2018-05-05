@@ -1,4 +1,4 @@
-historyMeasurement = 0;
+kidHistoryMeasurement = 0;
 parentHistoryMeasurement = 0;
 
 // Kid details
@@ -16,6 +16,7 @@ var kid = {
     lunchDose: "",
     dinnerDose: "",
     bedDose: "",
+    isTeen: false
 };
 
 var measurements = [];

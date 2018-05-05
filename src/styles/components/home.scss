@@ -1,9 +1,10 @@
 [data-component="home"]{
     .body {
-        margin-bottom: $footer-height;
+        flex: 1 0 auto;
+        margin-bottom: 4em; 
 
         .column {
-            padding: 5% 0;
+            padding: 1em 0;
             &:first-child {
                 border-top: 1px solid $lighter-grey;
             }
@@ -20,7 +21,7 @@
         }
         
         .text {
-            margin-top: 5%;
+            margin-top: .75em;
             font-family: Lato-Regular;
             font-size: 22px;
             color: $light-grey;

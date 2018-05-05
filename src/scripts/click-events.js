@@ -1,25 +1,16 @@
 // initialize click events
-function initClickEvents() {
-    // HEADER
-    // 
-    $( getDataComponent("measurement") + " .left-action-btn" ).click(function() {
-        $( getDataComponent("measurement") + " .glucose-data" ).addClass("transparent");
-        $( getDataComponent("measurement") + " .glucose-message" ).addClass("transparent");
-        $( getDataComponent("measurement") + " .glucose-bottle img").attr('src', "");
-        showComponent("monitor");
+function initClickEvents() {    
+    //////////////////////////////////////////////////////////////
+    // HOME
+    //////////////////////////////////////////////////////////////
+    
+    $( "#kid-mode" ).click(function() {
+        if (kid.active) {
+            showKidMenu("kid-monitor");
+            showComponent("kid-monitor");
+        }
     });
 
-    $( getDataComponent("history-measurement") + " .left-action-btn" ).click(function() {
-        showComponent("history");
-        historyMeasurement = 0;
-        $( getDataComponent("history-measurement") + " .nav-arrow.prev" ).hide();
-    });
-    
-    // BODY
-    //
-    $( "#kid-mode" ).click(function() {
-        // showComponent("sign-up");
-    });
     $( "#parent-mode" ).off().click(function() {
         if (kid.active) {
             showComponent("parent-status");
@@ -28,55 +19,86 @@ function initClickEvents() {
         }
     });
 
-    $( "#monitor-btn" ).click(function() {
-        showComponent("measurement");
-        $( getDataComponent("measurement") + " .glucose-bottle img").attr('src', "assets/tube.gif");
+    //////////////////////////////////////////////////////////////
+    // KID
+    //////////////////////////////////////////////////////////////
 
-        setTimeout(function() {
-            $( getDataComponent("measurement") + " .glucose-data" ).removeClass("transparent");
-            setTimeout(function() {
-                $( getDataComponent("measurement") + " .glucose-message" ).removeClass("transparent");
-            }, 750);
-        }, 2800);
-    });
-    
-    $( getDataComponent("history") + " .meas-1" ).off().click(function() {
-        historyMeasurement = 0;
-        updateHistoryMeasurement("kid", historyMeasurement);
-        showComponent("history-measurement");
-    });
-    $( getDataComponent("history") + " .meas-2" ).off().click(function() {
-        historyMeasurement = 1;
-        updateHistoryMeasurement("kid", historyMeasurement);
-        showComponent("history-measurement");
-    });
-    $( getDataComponent("history") + " .meas-3" ).off().click(function() {
-        historyMeasurement = 2;
-        updateHistoryMeasurement("kid", historyMeasurement);
-        showComponent("history-measurement");
-    });
-    $( getDataComponent("history-measurement") + " .nav-arrow.prev" ).off().click(function() {
-        historyMeasurement = historyMeasurement - 1;
-        updateHistoryMeasurement("kid", historyMeasurement);
-    });
-    $( getDataComponent("history-measurement") + " .nav-arrow.next" ).off().click(function() {
-        historyMeasurement = historyMeasurement + 1;
-        updateHistoryMeasurement("kid", historyMeasurement);
+    $( ".kid.subtitle" ).click(function() {
+        showComponent("parent-status");
     });
 
-    // FOOTER
-    //
-    $( ".monitor-tab" ).click(function() {
-        showComponent("monitor");
+    // KID BOTTOM MENU
+    $( ".kid-monitor-tab" ).click(function() {
+        showKidMenu("kid-monitor");
+        showComponent("kid-monitor");
     });
     
-    $( ".history-tab" ).click(function() {
-        showComponent("history");
+    $( ".kid-history-tab" ).click(function() {
+        showKidMenu("kid-history");
+        showComponent("kid-history");
+    });
+
+    // KID MONITOR
+    $( getDataComponent("kid-monitor") + " #monitor-btn" ).off().click(function() {
+        showKidMenu("kid-measurement");
+        showComponent("kid-measurement");
+    });
+
+    // KID MEASUREMENT
+    $( getDataComponent("kid-measurement") + " .back-btn" ).off().click(function() {
+        showKidMenu("kid-monitor");
+        showComponent("kid-monitor");
+    });
+
+    // KID HISTORY
+    $( getDataComponent("kid-history") + " .meas-1" ).off().click(function() {
+        kidHistoryMeasurement = 0;
+        updateHistoryMeasurement("kid", kidHistoryMeasurement);
+        showKidMenu("kid-history-measurement");
+        showComponent("kid-history-measurement");
+    });
+
+    $( getDataComponent("kid-history") + " .meas-2" ).off().click(function() {
+        kidHistoryMeasurement = 1;
+        updateHistoryMeasurement("kid", kidHistoryMeasurement);
+        showKidMenu("kid-history-measurement");
+        showComponent("kid-history-measurement");
+    });
+
+    $( getDataComponent("kid-history") + " .meas-3" ).off().click(function() {
+        kidHistoryMeasurement = 2;
+        updateHistoryMeasurement("kid", kidHistoryMeasurement);
+        showKidMenu("kid-history-measurement");
+        showComponent("kid-history-measurement");
+    });
+
+    // KID HISTORY MEASUREMENT
+    $( getDataComponent("kid-history-measurement") + " .left-action-btn" ).click(function() {
+        showKidMenu("kid-history");
+        showComponent("kid-history");
+        kidHistoryMeasurement = 0;
+        $( getDataComponent("kid-history-measurement") + " .nav-arrow.prev" ).hide();
+    });
+
+    $( getDataComponent("kid-history-measurement") + " .nav-arrow.prev" ).off().click(function() {
+        kidHistoryMeasurement = kidHistoryMeasurement - 1;
+        updateHistoryMeasurement("kid", kidHistoryMeasurement);
+    });
+
+    $( getDataComponent("kid-history-measurement") + " .nav-arrow.next" ).off().click(function() {
+        kidHistoryMeasurement = kidHistoryMeasurement + 1;
+        updateHistoryMeasurement("kid", kidHistoryMeasurement);
     });
 
     //////////////////////////////////////////////////////////////
     // PARENT
     //////////////////////////////////////////////////////////////
+
+    // TOP BAR
+    $( ".parent.subtitle" ).click(function() {
+        showKidMenu("kid-monitor");
+        showComponent("kid-monitor");
+    });
 
     // PARENT BOTTOM MENU
     $( ".parent-status-tab" ).click(function() {
@@ -97,6 +119,7 @@ function initClickEvents() {
         $( getDataComponent("parent-settings") + " .settings-input-age").val(kid.age);
         $( getDataComponent("parent-settings") + " .settings-input-regimen").val(kid.regimenType);
         $( getDataComponent("parent-settings") + " .settings-input-ic").val(kid.icRatio);
+        $( ".settings-teen" ).prop('checked', kid.isTeen);
         showComponent("parent-settings");
     });
 
@@ -106,6 +129,7 @@ function initClickEvents() {
         kid.age = $( ".setup-age" ).val();
         kid.regimenType = $( ".setup-regimen" ).val();
         kid.icRatio = $( ".setup-ic" ).val();
+        kid.isTeen = $('.setup-teen').is(":checked");
         showComponent("parent-setup-2");
     });
 
@@ -115,6 +139,7 @@ function initClickEvents() {
          $( ".setup-age" ).val(kid.age);
          $( ".setup-regimen" ).val(kid.regimenType);
          $( ".setup-ic" ).val(kid.icRatio);
+         $( ".setup-teen" ).prop('checked', kid.isTeen);
          showComponent("parent-setup");
     });
 
@@ -221,6 +246,7 @@ function initClickEvents() {
         kid.age = $( getDataComponent("parent-settings") + " .settings-input-age" ).val();
         kid.regimenType = $( getDataComponent("parent-settings") + " .settings-input-regimen" ).val();
         kid.icRatio = $( getDataComponent("parent-settings") + " .settings-input-ic" ).val();
+        
 
         $( getDataComponent("parent-settings") + " .settings-name").html(kid.name);
         $( getDataComponent("parent-settings") + " .settings-age").html(kid.age);
@@ -231,5 +257,9 @@ function initClickEvents() {
         $( getDataComponent("parent-settings") + " .edit-btn").removeClass('hidden');
         $( getDataComponent("parent-settings") + " .input").addClass('hidden');
         $( getDataComponent("parent-settings") + " .detail-value").removeClass('hidden');
+    });
+
+    $( getDataComponent("parent-settings") + " .settings-teen" ).change(function() {
+        kid.isTeen = $( getDataComponent("parent-settings") + '.settings-teen').is(":checked");
     });
 }

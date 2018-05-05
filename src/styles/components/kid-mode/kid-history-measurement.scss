@@ -1,5 +1,6 @@
-[data-component="history-measurement"]{
+[data-component="kid-history-measurement"]{
     .body {
+        flex: 1 0 auto; 
 
         .nav-arrow {
             position: absolute;
@@ -17,32 +18,34 @@
             &.next {
                 right: 5%;
             }
-        }
+        } // .nav-arrow
+
         .glucose-bottle {
             width: 100%;
             display: flex;
             justify-content: center;
             img {
-                height: 40vh;
+                height: 15em;
             }
-        }
+        } // .glucose-bottle
 
         .line {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 2vh 0;
+            padding: 1.25em 0;
             img {
                 width: 50%;
                 height: 1px;
             }
-        }
+        } // .glucose-bottle
+
         .message {
-            padding: 2vh 0 0 0;
+            padding: 1em 0 0 0;
             font-family: Lato-Regular;
             font-size: 14px;
             color: $light-grey;
-        }
+        } // .message
 
         .glucose-data {
             .title {
@@ -57,17 +60,16 @@
                 font-weight: bold;
             }
             span {
-                margin-top: 1vh;
+                margin-top: .25em;
                 font-family: Lato-Regular;
                 font-size: 12px;
                 color: $light-grey;
-                &.date {
-                    
-                }
-                &.day {
+                &.time {
                     margin-left: 4%;
                 }
             }
-        }
-    }
-}
+        } // .glucose-data
+
+    } // .body
+
+} // [data-component]

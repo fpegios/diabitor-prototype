@@ -1,0 +1,53 @@
+[data-component="kid-history"]{
+    .body {
+        flex: 1 0 auto; 
+
+        .measurements {
+            border-top: 1px solid $lighter-grey;
+            border-bottom: 1px solid $lighter-grey;
+            padding: 0.5em 0 1em;
+
+            .title {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 0.75em;
+                font-family: Lato-Regular;
+                font-size: 14px;
+                color: $light-grey;
+            }
+
+            .column {
+                width: 100%;
+                img {
+                    height: 8em;
+                }
+                .value {
+                    margin-top: .5em;
+                    color: $red;
+                    font-family: Lato-Black;
+                    font-size: 18px;
+                }
+                span {
+                    font-family: Lato-Regular;
+                    font-size: 12px;
+                    color: $light-grey;
+                    margin-top: .75em;
+
+                    &.time {
+                        margin-left: .5em;
+                    }
+                }
+            }
+
+        } // .measurements
+
+        .graph {
+            padding-top: 1em;
+            img {
+                width: 100%;
+            }
+        } // .graph
+
+    } // .body
+
+} // .[data-component]
