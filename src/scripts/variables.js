@@ -16,11 +16,18 @@ var kid = {
     lunchDose: "",
     dinnerDose: "",
     bedDose: "",
-    isTeen: false
+    isTeen: false,
+    hasNewMeasurement: false
 };
 
 var measurements = [];
 var measurement = []
+
+var measurementFace = [
+    "assets/face-low.png",
+    "assets/face-high.png",
+    "assets/face-ok.png"
+];
 
 var measurementImage = [
     "assets/tube-low.png",
@@ -38,4 +45,11 @@ var measurementFeedbackImg = [
     "assets/sugar.png",
     "assets/dose.png",
     "assets/ok.png"
+];
+
+var measurementAction = [
+    "DRINK JUICE!",
+    "DOSE!",
+    "OK!",
+    "DOSES!",
 ];

@@ -4,7 +4,7 @@ function initClickEvents() {
     // HOME
     //////////////////////////////////////////////////////////////
     
-    $( "#kid-mode" ).click(function() {
+    $( "#kid-mode" ).off().click(function() {
         if (kid.active) {
             showKidMenu("kid-monitor");
             showComponent("kid-monitor");
@@ -13,6 +13,7 @@ function initClickEvents() {
 
     $( "#parent-mode" ).off().click(function() {
         if (kid.active) {
+            updateParentStatus()
             showComponent("parent-status");
         } else {
             showComponent("parent-setup");
@@ -23,23 +24,43 @@ function initClickEvents() {
     // KID
     //////////////////////////////////////////////////////////////
 
-    $( ".kid.subtitle" ).click(function() {
+    $( ".kid.subtitle" ).off().click(function() {
+        updateParentStatus();
         showComponent("parent-status");
     });
 
     // KID BOTTOM MENU
-    $( ".kid-monitor-tab" ).click(function() {
+    $( ".kid-monitor-tab" ).off().click(function() {
         showKidMenu("kid-monitor");
         showComponent("kid-monitor");
     });
     
-    $( ".kid-history-tab" ).click(function() {
+    $( ".kid-history-tab" ).off().click(function() {
+        $( getDataComponent("kid-history") + " .meas-1 .value").html(measurements[0].value);
+        $( getDataComponent("kid-history") + " .meas-1 .date").html(measurements[0].date);
+        $( getDataComponent("kid-history") + " .meas-1 .time").html(measurements[0].time);
+        $( getDataComponent("kid-history") + " .meas-1 img").attr('src', measurements[0].img);
+
+        $( getDataComponent("kid-history") + " .meas-2 .value").html(measurements[1].value);
+        $( getDataComponent("kid-history") + " .meas-2 .date").html(measurements[1].date);
+        $( getDataComponent("kid-history") + " .meas-2 .time").html(measurements[1].time);
+        $( getDataComponent("kid-history") + " .meas-2 img").attr('src', measurements[1].img);
+
+        $( getDataComponent("kid-history") + " .meas-3 .value").html(measurements[2].value);
+        $( getDataComponent("kid-history") + " .meas-3 .date").html(measurements[2].date);
+        $( getDataComponent("kid-history") + " .meas-3 .time").html(measurements[2].time);
+        $( getDataComponent("kid-history") + " .meas-3 img").attr('src', measurements[2].img);
+        
         showKidMenu("kid-history");
         showComponent("kid-history");
     });
 
     // KID MONITOR
     $( getDataComponent("kid-monitor") + " #monitor-btn" ).off().click(function() {
+        measureGlucoseLevel();
+        $( getDataComponent("kid-measurement") + " .face img").attr('src', measurements[0].face);
+        $( getDataComponent("kid-measurement") + " .feedback .image img").attr('src', measurements[0].feedbackImg);
+        $( getDataComponent("kid-measurement") + " .feedback .action").html(measurements[0].feedbackAction);
         showKidMenu("kid-measurement");
         showComponent("kid-measurement");
     });
@@ -95,21 +116,36 @@ function initClickEvents() {
     //////////////////////////////////////////////////////////////
 
     // TOP BAR
-    $( ".parent.subtitle" ).click(function() {
+    $( ".parent.subtitle" ).off().click(function() {
         showKidMenu("kid-monitor");
         showComponent("kid-monitor");
     });
 
     // PARENT BOTTOM MENU
-    $( ".parent-status-tab" ).click(function() {
+    $( ".parent-status-tab" ).off().click(function() {
         showComponent("parent-status");
     });
     
-    $( ".parent-history-tab" ).click(function() {
+    $( ".parent-history-tab" ).off().click(function() {
+        $( getDataComponent("parent-history") + " .meas-1 .value").html(measurements[0].value);
+        $( getDataComponent("parent-history") + " .meas-1 .date").html(measurements[0].date);
+        $( getDataComponent("parent-history") + " .meas-1 .time").html(measurements[0].time);
+        $( getDataComponent("parent-history") + " .meas-1 img").attr('src', measurements[0].img);
+
+        $( getDataComponent("parent-history") + " .meas-2 .value").html(measurements[1].value);
+        $( getDataComponent("parent-history") + " .meas-2 .date").html(measurements[1].date);
+        $( getDataComponent("parent-history") + " .meas-2 .time").html(measurements[1].time);
+        $( getDataComponent("parent-history") + " .meas-2 img").attr('src', measurements[1].img);
+
+        $( getDataComponent("parent-history") + " .meas-3 .value").html(measurements[2].value);
+        $( getDataComponent("parent-history") + " .meas-3 .date").html(measurements[2].date);
+        $( getDataComponent("parent-history") + " .meas-3 .time").html(measurements[2].time);
+        $( getDataComponent("parent-history") + " .meas-3 img").attr('src', measurements[2].img);
+        
         showComponent("parent-history");
     });
 
-    $( ".parent-settings-tab" ).click(function() {
+    $( ".parent-settings-tab" ).off().click(function() {
         $( getDataComponent("parent-settings") + " .settings-name").html(kid.name);
         $( getDataComponent("parent-settings") + " .settings-age").html(kid.age);
         $( getDataComponent("parent-settings") + " .settings-regimen").html(kid.regimenType);
@@ -168,33 +204,12 @@ function initClickEvents() {
         kid.active = true;
         
         generateRandomMeasurements();
-        $( getDataComponent("parent-status") + " .value").html(measurements[0].value);
-        $( getDataComponent("parent-status") + " .date").html(measurements[0].date);
-        $( getDataComponent("parent-status") + " .time").html(measurements[0].time);
-        $( getDataComponent("parent-status") + " .value").html(measurements[0].value);
-        $( getDataComponent("parent-status") + " .message").html(measurements[0].message);
         $( getDataComponent("parent-status") + " .glucose-tube img").attr('src', measurements[0].img);
-        $( getDataComponent("parent-status") + " .feedback img").attr('src', measurements[0].img);
+        $( getDataComponent("parent-status") + " .glucose-data .date").html(measurements[0].date);
+        $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
+        $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
+        $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
         showComponent("parent-status");
-    });
-
-    // PARENT STATUS
-    $( getDataComponent("parent-status") + " .parent-history-tab" ).off().click(function() {
-        $( getDataComponent("parent-history") + " .meas-1 .value").html(measurements[0].value);
-        $( getDataComponent("parent-history") + " .meas-1 .date").html(measurements[0].date);
-        $( getDataComponent("parent-history") + " .meas-1 .time").html(measurements[0].time);
-        $( getDataComponent("parent-history") + " .meas-1 img").attr('src', measurements[0].img);
-
-        $( getDataComponent("parent-history") + " .meas-2 .value").html(measurements[1].value);
-        $( getDataComponent("parent-history") + " .meas-2 .date").html(measurements[1].date);
-        $( getDataComponent("parent-history") + " .meas-2 .time").html(measurements[1].time);
-        $( getDataComponent("parent-history") + " .meas-2 img").attr('src', measurements[1].img);
-
-        $( getDataComponent("parent-history") + " .meas-3 .value").html(measurements[2].value);
-        $( getDataComponent("parent-history") + " .meas-3 .date").html(measurements[2].date);
-        $( getDataComponent("parent-history") + " .meas-3 .time").html(measurements[2].time);
-        $( getDataComponent("parent-history") + " .meas-3 img").attr('src', measurements[2].img);
-        showComponent("parent-history");
     });
     
     // PARENT HISTORY
@@ -259,7 +274,7 @@ function initClickEvents() {
         $( getDataComponent("parent-settings") + " .detail-value").removeClass('hidden');
     });
 
-    $( getDataComponent("parent-settings") + " .settings-teen" ).change(function() {
-        kid.isTeen = $( getDataComponent("parent-settings") + '.settings-teen').is(":checked");
+    $( getDataComponent("parent-settings") + " .settings-teen" ).off().change(function() {
+        kid.isTeen = $('.settings-teen').is(":checked");
     });
 }

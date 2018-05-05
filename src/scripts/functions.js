@@ -30,7 +30,7 @@ function updateHistoryMeasurement(mode, id) {
         $( getDataComponent(mode + "-history-measurement") + " .nav-arrow.next" ).hide();
     }
     $( getDataComponent(mode + "-history-measurement") + " .glucose-bottle img").attr('src', measurements[id].img);
-    $( getDataComponent(mode + "-history-measurement") + " .message").html(measurements[id].message);
+    $( getDataComponent(mode + "-history-measurement") + " .message").html(measurements[id].feedbackΜessage);
     $( getDataComponent(mode + "-history-measurement") + " .value").html(measurements[id].value);
     $( getDataComponent(mode + "-history-measurement") + " .date").html(measurements[id].date);
     $( getDataComponent(mode + "-history-measurement") + " .time").html(measurements[id].time);
@@ -59,23 +59,69 @@ function generateRandomMeasurements() {
     
             measurement.value = ((Math.floor(Math.random() * 140) + 20) / 10).toFixed(1);
 
+            
             if (measurement.value < 6) { // low
                 measurement.img = measurementImage[0]
-                measurement.message = measurementMessage[0];
+                measurement.feedbackΜessage = measurementMessage[0];
                 measurement.feedbackImg = measurementFeedbackImg[0];
+                measurement.feedbackAction = measurementAction[0];
             } else if (measurement.value > 10) { // high
+                doses = (Math.floor(Math.random() * 3) + 1);
                 measurement.img = measurementImage[1]
-                measurement.message = measurementMessage[1];
+                measurement.feedbackΜessage = measurementMessage[1];
                 measurement.feedbackImg = measurementFeedbackImg[1];
+                if (doses == 1) {
+                    measurement.feedbackAction = doses + " " + measurementAction[1];  
+                } else {
+                    measurement.feedbackAction = doses + " " + measurementAction[3];
+                }
             } else { // normal
                 measurement.img = measurementImage[2]
-                measurement.message = measurementMessage[2];
+                measurement.feedbackΜessage = measurementMessage[2];
                 measurement.feedbackImg = measurementFeedbackImg[2];
+                measurement.feedbackAction = measurementAction[2];
             }
             measurements.unshift(measurement);
             measurement = [];
         }
     }
+}
+
+// get measurement details
+function measureGlucoseLevel() {
+    currentDay = ("0" + new Date().getDate()).slice(-2);
+    currentMonth = ("0" + (new Date().getMonth() + 1)).slice(-2);
+
+    measurement.date = currentDay + "/" + currentMonth; 
+    measurement.value = ((Math.floor(Math.random() * 140) + 20) / 10).toFixed(1);
+
+
+    if (measurement.value < 6) { // low
+        measurement.img = measurementImage[0];
+        measurement.face = measurementFace[0];
+        measurement.feedbackΜessage = measurementMessage[0];
+        measurement.feedbackImg = measurementFeedbackImg[0];
+        measurement.feedbackAction = measurementAction[0];
+    } else if (measurement.value > 10) { // high
+        doses = (Math.floor(Math.random() * 3) + 1);
+        measurement.img = measurementImage[1]
+        measurement.face = measurementFace[1];
+        measurement.feedbackΜessage = measurementMessage[1];
+        measurement.feedbackImg = measurementFeedbackImg[1];
+        if (doses == 1) {
+            measurement.feedbackAction = doses + " " + measurementAction[1];  
+        } else {
+            measurement.feedbackAction = doses + " " + measurementAction[3];
+        }
+    } else { // normal
+        measurement.img = measurementImage[2]
+        measurement.face = measurementFace[2];
+        measurement.feedbackΜessage = measurementMessage[2];
+        measurement.feedbackImg = measurementFeedbackImg[2];
+        measurement.feedbackAction = measurementAction[2];
+    }
+    measurements.unshift(measurement);
+    measurement = [];
 }
 
 // show menu in kid mode only if the kid is teen
@@ -85,4 +131,13 @@ function showKidMenu(component) {
     } else {
         $( getDataComponent(component) + " .footer" ).addClass("hidden");
     }
+}
+
+// update parent status component with lstest measurements
+function updateParentStatus() {
+    $( getDataComponent("parent-status") + " .glucose-tube img").attr('src', measurements[0].img);
+    $( getDataComponent("parent-status") + " .glucose-data .date").html(measurements[0].date);
+    $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
+    $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
+    $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
 }
