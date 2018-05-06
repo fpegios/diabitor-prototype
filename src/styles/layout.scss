@@ -34,6 +34,11 @@
                 font-family: Nexa-Bold;
                 font-size: 32px;
                 color: $red;
+                .subtitle {
+                    font-family: Lato-Regular;
+                    font-size: 30px;
+                    color: $light-grey;
+                }
             }
             &.right-action-btn{
                 position: absolute;
@@ -55,19 +60,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex: 1 0 auto;
     }
 
     .footer {
         border-top: 1px solid $lighter-grey;
-        height: $footer-height;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        flex: 1 0 auto;  
+        
+        &.menu {
+            flex: unset;
+            height: $footer-height;
+        }
 
         img {
-            height: 4vh;
+            height: 1.5em;
         }
         span {
             font-family: Lato-Regular;
@@ -95,7 +104,7 @@
 .column {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column!important;
     justify-content: center;
     align-items: center;
 }
@@ -106,4 +115,22 @@
 
 .match-parent-width {
     width: 100%;
+}
+
+button.btn {
+    border: none;
+    border-radius: 5px;
+    padding: .75em 0;
+    font-family: Lato-Regular;
+    font-size: 16px;    
+    color: $white;
+    width: 80%;
+
+    &.red {
+        background-color: $red;
+    }
+
+    &.grey {
+        background-color: $light-grey;
+    }
 }

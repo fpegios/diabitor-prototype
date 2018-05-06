@@ -1,58 +1,77 @@
 [data-component="parent-status"]{
     .body {
+        flex: 1 0 auto;  
 
-        .kid-icon {
+        .glucose-tube {
             width: 100%;
             display: flex;
             justify-content: center;
-            img {
-                height: 30vh;
-            }
-        }
 
-        .kid-name {
-            font-family: Lato-Regular;
-            font-weight: bold;
-            font-size: 32px;
-            color: $red;
-        }
+            img {
+                height: 15em;
+            }
+
+            .glucose-data {
+                position: absolute;
+                left: 6em;
+                right:0;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top: 2.95em;
+                width: 6em;
+                border-top: 2px solid $red;
+                padding-left: 2em;
+
+                .value {
+                    color: $red;
+                    font-family: Lato-Black;
+                    font-size: 32px;
+                    font-weight: bold;
+                }
+                
+                .title {
+                    font-family: Lato-Black;
+                    font-size: 10px;
+                    color: $red;            
+                }
+
+                .datetime {
+                    font-family: Lato-Regular;
+                    font-size: 14px;
+                    color: $light-grey;
+                    margin-top: .75em;
+
+                    &.time {
+                        margin-left: 0.5em;
+                    }
+                }
+
+            } // .glucose-data
+            
+        } // .glucose-tube
+
+        .feedback {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            .message {
+                font-family: Lato-Black;
+                font-size: 20px;
+                color: $light-grey;
+            }
+        } // .feedback
 
         .line {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding: 1vh 0 2.5vh 0;
+            padding: 1.25em 0;
             img {
                 width: 50%;
                 height: 1px;
             }
-        }
+        } // .line
 
-        .glucose-data {
-            .title {
-                font-family: Lato-Regular;
-                font-size: 14px;
-                color: $red;            
-            }
-            .value {
-                color: $red;
-                font-family: Lato-Black;
-                font-size: 50px;
-                font-weight: bold;
-            }
-        }
+    } // body
 
-        span {
-            margin-top: 1vh;
-            font-family: Lato-Regular;
-            font-size: 12px;
-            color: $light-grey;
-            &.date {
-                
-            }
-            &.day {
-                margin-left: 7%;
-            }
-        }
-    }
-}
+} // [data-component]
