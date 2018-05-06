@@ -8,6 +8,7 @@ function initClickEvents() {
         if (kid.active) {
             showKidMenu("kid-monitor");
             showComponent("kid-monitor");
+            currentMode = "kid";
         }
     });
 
@@ -18,6 +19,7 @@ function initClickEvents() {
         } else {
             showComponent("parent-setup");
         }
+        currentMode = "parent";
     });
 
     //////////////////////////////////////////////////////////////

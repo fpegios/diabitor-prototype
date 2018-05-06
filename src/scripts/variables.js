@@ -1,5 +1,6 @@
 kidHistoryMeasurement = 0;
 parentHistoryMeasurement = 0;
+currentMode = "parent";
 
 // Kid details
 var kid = {
