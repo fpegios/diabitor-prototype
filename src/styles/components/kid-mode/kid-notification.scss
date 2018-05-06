@@ -1,0 +1,67 @@
+[data-component="kid-notification"] {
+    height: 100%;
+    background-color: rgba(black, .5);
+    z-index: 10;
+
+    .container {
+        position: relative;
+        margin-top: 2em;
+        border-radius: 7px;
+        height: 7em;
+        background-color: $white;
+
+        .icon {
+            width: 45%;
+            .title {
+                font-family: Nexa-Bold;
+                font-size: 18px;
+                color: $red;
+            }
+    
+            .kid-face {
+                margin-top: .5em;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                border-right: 1px solid $light-grey;
+                img {
+                    height: 3.5em;
+                }
+            }
+        } // .icon
+
+        .message {
+            width: 55%;
+            .inner-wrapper {
+                margin-top: .5em;
+                padding: 0 1.5em;
+                width: unset;
+                align-items: unset;
+                .title {
+                    font-family: Lato-Black;
+                    font-size: 18px;
+                    color: $red;
+                }
+                .subtitle {
+                    font-family: Lato-Black;
+                    font-size: 14px;
+                    color: $red;
+                }
+            }
+        } // .message
+
+        .datetime {
+            position: absolute;
+            top: .25em;
+            right: .75em;
+            span {
+                font-family: Lato-Regular;
+                font-size: 14px;
+                color: $light-grey;
+            }
+        }
+        
+    } // .container
+
+
+} // [data-component]

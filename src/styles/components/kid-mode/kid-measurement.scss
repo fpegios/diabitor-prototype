@@ -1,0 +1,45 @@
+[data-component="kid-measurement"]{
+    .body {
+        flex: 1 0 auto;  
+        margin-bottom: 4em;
+
+        .face {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            img {
+                height: 10em;
+            }
+        } // .face
+
+        .line {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 2.5em 0;
+            img {
+                width: 50%;
+                height: 1px;
+            }
+        } // .line
+
+        .feedback {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .image img {
+                height: 2.5em;
+            }
+
+            .action {
+                margin-top: .5em;
+                font-family: Lato-Black;
+                font-size: 20px;
+                color: $light-grey;
+            }
+        } // .feedback
+
+    } // .body
+
+} // [data-component]

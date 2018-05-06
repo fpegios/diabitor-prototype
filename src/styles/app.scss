@@ -6,14 +6,21 @@
 
 @import 'layout.scss';
 @import 'preloader.scss';
-@import 'components/sign-up.scss';
-@import 'components/id-sign-in.scss';
-@import 'components/setup.scss';
-@import 'components/kid-mode/monitor.scss';
-@import 'components/kid-mode/measurement.scss';
-@import 'components/kid-mode/history.scss';
-@import 'components/kid-mode/history-measurement.scss';
-@import 'components/kid-mode/profile.scss';
+@import 'components/home.scss';
+
+// Kid mode styles
+@import 'components/kid-mode/kid-monitor.scss';
+@import 'components/kid-mode/kid-measurement.scss';
+@import 'components/kid-mode/kid-history.scss';
+@import 'components/kid-mode/kid-history-measurement.scss';
+@import 'components/kid-mode/kid-notification.scss';
+
+// Parent mode styles
+@import 'components/parent-mode/parent-setup.scss';
+@import 'components/parent-mode/parent-setup-2.scss';
+@import 'components/parent-mode/parent-setup-3.scss';
 @import 'components/parent-mode/parent-status.scss';
 @import 'components/parent-mode/parent-history.scss';
 @import 'components/parent-mode/parent-history-measurement.scss';
+@import 'components/parent-mode/parent-settings.scss';
+@import 'components/parent-mode/parent-notification.scss';
