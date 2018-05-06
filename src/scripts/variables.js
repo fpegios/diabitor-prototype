@@ -54,3 +54,10 @@ var measurementAction = [
     "OK!",
     "DOSES!",
 ];
+
+var kidNotificationMessage = [
+    "BREAKFAST TIME!",
+    "LUNCH TIME!",
+    "DINNER TIME!",
+    "BEDTIME!"
+];

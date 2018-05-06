@@ -1,6 +1,7 @@
 [data-component="kid-notification"] {
     height: 100%;
     background-color: rgba(black, .5);
+    z-index: 10;
 
     .container {
         position: relative;
@@ -55,7 +56,7 @@
             right: .75em;
             span {
                 font-family: Lato-Regular;
-                font-size: 12px;
+                font-size: 14px;
                 color: $light-grey;
             }
         }

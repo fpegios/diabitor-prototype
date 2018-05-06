@@ -27,8 +27,10 @@ function initClickEvents() {
     //////////////////////////////////////////////////////////////
 
     $( ".kid.subtitle" ).off().click(function() {
+        currentMode = "parent";
         updateParentStatus();
         showComponent("parent-status");
+        notifyIfNewMeasurement();
     });
 
     // KID BOTTOM MENU
@@ -63,12 +65,17 @@ function initClickEvents() {
         $( getDataComponent("kid-measurement") + " .face img").attr('src', measurements[0].face);
         $( getDataComponent("kid-measurement") + " .feedback .image img").attr('src', measurements[0].feedbackImg);
         $( getDataComponent("kid-measurement") + " .feedback .action").html(measurements[0].feedbackAction);
+        kid.hasNewMeasurement = true;
         showKidMenu("kid-measurement");
         showComponent("kid-measurement");
     });
 
     // KID MEASUREMENT
     $( getDataComponent("kid-measurement") + " .back-btn" ).off().click(function() {
+        if (nextMeasurementIsAfterMeal) {
+            notifyForMeasurementAfter(5, true);
+        }
+        nextMeasurementIsAfterMeal = false;
         showKidMenu("kid-monitor");
         showComponent("kid-monitor");
     });
@@ -113,14 +120,24 @@ function initClickEvents() {
         updateHistoryMeasurement("kid", kidHistoryMeasurement);
     });
 
+    // KID NOTIFICATION
+    $( getDataComponent("kid-notification") ).off().click(function() {
+        showComponent("kid-monitor");
+    });
+
     //////////////////////////////////////////////////////////////
     // PARENT
     //////////////////////////////////////////////////////////////
 
     // TOP BAR
     $( ".parent.subtitle" ).off().click(function() {
-        showKidMenu("kid-monitor");
-        showComponent("kid-monitor");
+        if ( kid.active) {
+            notifyForMeasurementAfter(5, false);
+            nextMeasurementIsAfterMeal = true;
+            currentMode = "kid";
+            showKidMenu("kid-monitor");
+            showComponent("kid-monitor");
+        }
     });
 
     // PARENT BOTTOM MENU
@@ -278,5 +295,15 @@ function initClickEvents() {
 
     $( getDataComponent("parent-settings") + " .settings-teen" ).off().change(function() {
         kid.isTeen = $('.settings-teen').is(":checked");
+    });
+
+    // PARENT NOTIFICATION
+    $( getDataComponent("parent-notification") ).off().click(function() {
+        $( getDataComponent("parent-status") + " .glucose-tube img").attr('src', measurements[0].img);
+        $( getDataComponent("parent-status") + " .glucose-data .date").html(measurements[0].date);
+        $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
+        $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
+        $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
+        showComponent("parent-status");
     });
 }

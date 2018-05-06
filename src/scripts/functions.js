@@ -91,10 +91,13 @@ function generateRandomMeasurements() {
 function measureGlucoseLevel() {
     currentDay = ("0" + new Date().getDate()).slice(-2);
     currentMonth = ("0" + (new Date().getMonth() + 1)).slice(-2);
-
     measurement.date = currentDay + "/" + currentMonth; 
-    measurement.value = ((Math.floor(Math.random() * 140) + 20) / 10).toFixed(1);
 
+    currentHour = ("0" + new Date().getHours()).slice(-2);
+    currentMinute = ("0" + (new Date().getMinutes() + 1)).slice(-2);
+    measurement.time = currentHour + ":" + currentMinute;
+
+    measurement.value = ((Math.floor(Math.random() * 140) + 20) / 10).toFixed(1);
 
     if (measurement.value < 6) { // low
         measurement.img = measurementImage[0];
@@ -140,4 +143,36 @@ function updateParentStatus() {
     $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
     $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
     $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
+}
+
+// notify kid for measurement after specific seconds
+function notifyForMeasurementAfter(sec, isAfterMeal) {
+    setTimeout(function(){ 
+        datetime = (Math.floor(Math.random() * 4) + 1);
+        if (isAfterMeal) {
+            $( getDataComponent("kid-notification") + " .message .title").html("AFTER MEAL MEASUREMENT!");
+        } else {
+            $( getDataComponent("kid-notification") + " .message .title").html(kidNotificationMessage[datetime]);
+        }
+        $( getDataComponent("kid-notification") + " .datetime .date").html("now");
+        $( getDataComponent("kid-notification") + " .datetime .time").html("");
+        if (currentMode == "kid") {
+            showModal("kid-notification") ;
+        }
+    }, sec * 1000);
+}
+
+function notifyIfNewMeasurement() {
+    if (kid.hasNewMeasurement) {
+        $( getDataComponent("parent-notification") + " .face img").attr('src', measurements[0].face);
+        $( getDataComponent("parent-notification") + " .message .message").html(measurements[0].feedbackΜessage);
+        $( getDataComponent("parent-notification") + " .message .value").html(measurements[0].value + " <span class=\"ml\">mmol/l</span>");
+        $( getDataComponent("parent-notification") + " .datetime .date").html(measurements[0].date);
+        $( getDataComponent("parent-notification") + " .datetime .time").html(measurements[0].time);
+        if (currentMode == "parent") {
+            showModal("parent-notification") ;
+        }
+        kid.hasNewMeasurement = false;
+    }
+    
 }
