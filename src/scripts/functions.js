@@ -157,6 +157,7 @@ function notifyForMeasurementAfter(sec, isAfterMeal) {
         $( getDataComponent("kid-notification") + " .datetime .date").html("now");
         $( getDataComponent("kid-notification") + " .datetime .time").html("");
         if (currentMode == "kid") {
+            $( getDataComponent("kid-monitor") + " .modal" ).addClass("hidden");
             showModal("kid-notification") ;
         }
     }, sec * 1000);

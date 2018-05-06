@@ -9,6 +9,8 @@ function initClickEvents() {
             showKidMenu("kid-monitor");
             showComponent("kid-monitor");
             currentMode = "kid";
+        } else {
+            $( getDataComponent("home") + " .modal" ).removeClass("hidden");
         }
     });
 
@@ -20,6 +22,10 @@ function initClickEvents() {
             showComponent("parent-setup");
         }
         currentMode = "parent";
+    });
+
+    $( getDataComponent("home") + " .modal .submit" ).off().click(function() {
+        $( getDataComponent("home") + " .modal" ).addClass("hidden");
     });
 
     //////////////////////////////////////////////////////////////
@@ -61,6 +67,11 @@ function initClickEvents() {
 
     // KID MONITOR
     $( getDataComponent("kid-monitor") + " #monitor-btn" ).off().click(function() {
+        $( getDataComponent("kid-monitor") + " .modal" ).removeClass("hidden");
+    });
+
+    $( getDataComponent("kid-monitor") + " .submit" ).off().click(function() {
+        $( getDataComponent("kid-monitor") + " .modal" ).addClass("hidden");
         measureGlucoseLevel();
         $( getDataComponent("kid-measurement") + " .face img").attr('src', measurements[0].face);
         $( getDataComponent("kid-measurement") + " .feedback .image img").attr('src', measurements[0].feedbackImg);
