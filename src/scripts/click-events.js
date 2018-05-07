@@ -16,7 +16,7 @@ function initClickEvents() {
 
     $( "#parent-mode" ).off().click(function() {
         if (kid.active) {
-            updateParentStatus()
+            updateParentStatus();
             showComponent("parent-status");
         } else {
             showComponent("parent-setup");
@@ -172,6 +172,7 @@ function initClickEvents() {
         $( getDataComponent("parent-history") + " .meas-3 .time").html(measurements[2].time);
         $( getDataComponent("parent-history") + " .meas-3 img").attr('src', measurements[2].img);
         
+        draw(measurements);
         showComponent("parent-history");
     });
 
@@ -234,11 +235,7 @@ function initClickEvents() {
         kid.active = true;
         
         generateRandomMeasurements();
-        $( getDataComponent("parent-status") + " .glucose-tube img").attr('src', measurements[0].img);
-        $( getDataComponent("parent-status") + " .glucose-data .date").html(measurements[0].date);
-        $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
-        $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
-        $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
+        updateParentStatus();
         showComponent("parent-status");
     });
     
@@ -310,11 +307,7 @@ function initClickEvents() {
 
     // PARENT NOTIFICATION
     $( getDataComponent("parent-notification") ).off().click(function() {
-        $( getDataComponent("parent-status") + " .glucose-tube img").attr('src', measurements[0].img);
-        $( getDataComponent("parent-status") + " .glucose-data .date").html(measurements[0].date);
-        $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
-        $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
-        $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
+        updateParentStatus();
         showComponent("parent-status");
     });
 }

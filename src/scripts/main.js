@@ -3,11 +3,11 @@ $( document ).ready(function() {
 });
 
 // HIDE PRELOADER WHEN EVERYTHING IS LOADED
-$(window).on('load', function() {
-    setTimeout(function() {
-        hidePreloader();
-    }, 2000);
-});
+// $(window).on('load', function() {
+//     setTimeout(function() {
+//         hidePreloader();
+//     }, 2000);
+// });
 
 // generate html components
 function includeComponents() { 
