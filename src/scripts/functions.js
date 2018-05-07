@@ -143,6 +143,18 @@ function updateParentStatus() {
     $( getDataComponent("parent-status") + " .glucose-data .time").html(measurements[0].time);
     $( getDataComponent("parent-status") + " .glucose-data .value").html(measurements[0].value);
     $( getDataComponent("parent-status") + " .feedback .message").html(measurements[0].feedbackΜessage);
+
+    if (measurements[0].feedbackΜessage == measurementMessage[0]) {
+        $( getDataComponent("parent-status") + " .glucose-data").removeClass("ok high");
+        $( getDataComponent("parent-status") + " .glucose-data").addClass("low");
+    } else if (measurements[0].feedbackΜessage == measurementMessage[1]) {
+        $( getDataComponent("parent-status") + " .glucose-data").removeClass("ok low");
+        $( getDataComponent("parent-status") + " .glucose-data").addClass("high");
+    } else {
+        $( getDataComponent("parent-status") + " .glucose-data").removeClass("low high");
+        $( getDataComponent("parent-status") + " .glucose-data").addClass("ok");
+    }
+
 }
 
 // notify kid for measurement after specific seconds
