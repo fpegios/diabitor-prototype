@@ -1,6 +1,7 @@
 [data-component="parent-history"]{
     .body {
         flex: 1 0 auto; 
+        display: block;
 
         .measurements {
             border-top: 1px solid $lighter-grey;

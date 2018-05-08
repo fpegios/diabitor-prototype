@@ -2,6 +2,9 @@ kidHistoryMeasurement = 0;
 parentHistoryMeasurement = 0;
 currentMode = "parent";
 
+var injectionNotificationTimeout;
+var measurementNotificationTimeout;
+
 // Kid details
 var kid = {
     active: false,

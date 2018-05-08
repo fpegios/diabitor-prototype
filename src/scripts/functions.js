@@ -255,7 +255,7 @@ function updateParentStatus() {
 
 // notify kid for injection after specific seconds
 function notifyForInjection(sec) {
-    setTimeout(function(){ 
+    injectionNotificationTimeout = setTimeout(function(){ 
         time = (Math.floor(Math.random() * 4) + 1);
         if (time == 1) { // breakfast
             doses = kid.breakfastDose;
@@ -284,7 +284,7 @@ function notifyForInjection(sec) {
 
 // notify kid for measurement after specific seconds
 function notifyForMeasurement(sec) {
-    setTimeout(function(){ 
+    measurementNotificationTimeout = setTimeout(function(){ 
         $( getDataComponent("kid-measurement-notification") + " .datetime .date").html("now");
         $( getDataComponent("kid-measurement-notification") + " .datetime .time").html("");
         if (currentMode == "kid") {

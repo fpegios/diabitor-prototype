@@ -80,6 +80,10 @@
 
     .footer {
         border: none;
+        button {
+            bottom: 1em;
+            position: absolute;
+        }
     } // .footer
 
 } // [data-component]
