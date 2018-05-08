@@ -42,9 +42,81 @@
         } // .measurements
 
         .graph {
-            padding-top: 1em;
-            img {
-                width: 100%;
+            padding-bottom: 1.5em;
+            width: 100%;
+            position: relative;
+            .title {
+                position: absolute;
+                top: .25em;
+                padding-bottom: 0.75em;
+                font-family: Lato-Regular;
+                font-size: 14px;
+                color: $light-grey;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            
+            text {
+              font-size: 12px;
+              font-family: Lato-Regular;
+              color: #D3D3D3;
+            }
+            
+            .temperature {
+              fill: none;
+              stroke-width: 2px;
+            }
+            
+            .temp-probe {
+              stroke: red;
+            }
+            
+            
+            .high-threshold {
+              fill: none;
+              stroke: grey;
+              stroke-width: 1px;
+            }
+            
+            
+            .high-threshold {
+              fill: none;
+              stroke: grey;
+              stroke-width: 1px;
+            }
+            
+            .low-threshold {
+              fill: none;
+              stroke: grey;
+              stroke-width: 1px;
+            }
+            
+            div.tooltip {
+                position: absolute;
+                text-align: center;
+                width: 60px;
+                height: 28px;
+                padding: 2px;
+                font: 12px sans-serif;
+                background: lightsteelblue;
+                border: 0px;
+                border-radius: 8px;
+                pointer-events: none;
             }
         } // .graph
 

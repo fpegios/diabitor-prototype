@@ -311,7 +311,7 @@ function notifyIfNewMeasurement() {
 }
 
 // draw d3 graph
-function draw(data) {
+function draw(data, graph) {
 
     $( "svg" ).remove();
 
@@ -326,9 +326,7 @@ function draw(data) {
         data[6],
         data[7],
         data[8],
-        data[9],
-        data[10],
-        data[11]
+        data[9]
     ];
 
     // set the dimensions and margins of the graph
@@ -360,7 +358,7 @@ function draw(data) {
     var y = d3.scaleLinear().range([height, 0]);
 
     // define the div for the tooltip
-    var div = d3.select("graph").append("div")
+    var div = d3.select(graph).append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
@@ -376,7 +374,7 @@ function draw(data) {
         .x(function(d){ return x(d.timestamp); })
         .y(function(d){ return y(low_threshold); })
 
-    var svg = d3.select("graph").append("svg")
+    var svg = d3.select(graph).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")

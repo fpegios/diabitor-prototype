@@ -61,6 +61,7 @@ function initClickEvents() {
         $( getDataComponent("kid-history") + " .meas-3 .time").html(measurements[2].time);
         $( getDataComponent("kid-history") + " .meas-3 img").attr('src', measurements[2].img);
         
+        draw(measurements, "graph-kid");
         showKidMenu("kid-history");
         showComponent("kid-history");
     });
@@ -173,7 +174,7 @@ function initClickEvents() {
         $( getDataComponent("parent-history") + " .meas-3 .time").html(measurements[2].time);
         $( getDataComponent("parent-history") + " .meas-3 img").attr('src', measurements[2].img);
         
-        draw(measurements);
+        draw(measurements, "graph-parent");
         showComponent("parent-history");
     });
 
