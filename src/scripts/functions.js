@@ -332,7 +332,7 @@ function draw(data, graph) {
     // set the dimensions and margins of the graph
     var margin = {top: 20, right: 20, bottom: 40, left: 50},
         width = 375 - margin.left - margin.right,
-        height = 250 - margin.top - margin.bottom,
+        height = 220 - margin.top - margin.bottom,
         max_bgl_value = 21,
         kidsAge = 10,
         high_threshold = 10,
