@@ -36,6 +36,8 @@ function initClickEvents() {
         currentMode = "parent";
         updateParentStatus();
         showComponent("parent-status");
+        clearTimeout(injectionNotificationTimeout);
+        clearTimeout(measurementNotificationTimeout);
         notifyIfNewMeasurement();
     });
 
