@@ -44,6 +44,15 @@
         .graph {
             padding-bottom: 1.5em;
             width: 100%;
+            position: relative;
+            .title {
+                position: absolute;
+                top: .25em;
+                padding-bottom: 0.75em;
+                font-family: Lato-Regular;
+                font-size: 14px;
+                color: $light-grey;
+            }
             ol, ul {
                 list-style: none;
             }
