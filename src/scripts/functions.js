@@ -253,20 +253,43 @@ function updateParentStatus() {
 
 }
 
-// notify kid for measurement after specific seconds
-function notifyForMeasurementAfter(sec, isAfterMeal) {
+// notify kid for injection after specific seconds
+function notifyForInjection(sec) {
     setTimeout(function(){ 
-        datetime = (Math.floor(Math.random() * 4) + 1);
-        if (isAfterMeal) {
-            $( getDataComponent("kid-notification") + " .message .title").html("AFTER MEAL MEASUREMENT!");
-        } else {
-            $( getDataComponent("kid-notification") + " .message .title").html(kidNotificationMessage[datetime]);
+        time = (Math.floor(Math.random() * 4) + 1);
+        if (time == 1) { // breakfast
+            doses = kid.breakfastDose;
+        } else if (time == 2) { // lunch
+            doses = kid.lunchDose;
+        } else if (time == 3) { // dinner
+            doses = kid.dinnerDose;
+        } else if (time == 4) { // bedtime
+            doses = kid.bedDose;
         }
-        $( getDataComponent("kid-notification") + " .datetime .date").html("now");
-        $( getDataComponent("kid-notification") + " .datetime .time").html("");
+
+        if (doses == 1) {
+            message = doses + " " + measurementAction[1]; 
+        } else {
+            message = doses + " " + measurementAction[3];
+        }
+        $( getDataComponent("kid-injection-notification") + " .message .subtitle").html(message);
+        $( getDataComponent("kid-injection-notification") + " .datetime .date").html("now");
+        $( getDataComponent("kid-injection-notification") + " .datetime .time").html("");
         if (currentMode == "kid") {
             $( getDataComponent("kid-monitor") + " .modal" ).addClass("hidden");
-            showModal("kid-notification") ;
+            showModal("kid-injection-notification") ;
+        }
+    }, sec * 1000);
+}
+
+// notify kid for measurement after specific seconds
+function notifyForMeasurement(sec) {
+    setTimeout(function(){ 
+        $( getDataComponent("kid-measurement-notification") + " .datetime .date").html("now");
+        $( getDataComponent("kid-measurement-notification") + " .datetime .time").html("");
+        if (currentMode == "kid") {
+            $( getDataComponent("kid-monitor") + " .modal" ).addClass("hidden");
+            showModal("kid-measurement-notification") ;
         }
     }, sec * 1000);
 }
@@ -398,15 +421,21 @@ function draw(data) {
     // add the X Axis
     svg.append("g")
         .attr("transform", "translate(0,"+ height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x)
+              .tickFormat(d3.timeFormat("%m-%d")))
+        .selectAll("text")	
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
 
     // text label for the x axis
-      svg.append("text")             
-          .attr("transform",
-                "translate(" + (width/2) + " ," + 
-                               (height + margin.top + 10) + ")")
-          .style("text-anchor", "middle")
-          .text("Time of day");
+    //   svg.append("text")             
+    //       .attr("transform",
+    //             "translate(" + (width/2) + " ," + 
+    //                            (height + margin.top + 10) + ")")
+    //       .style("text-anchor", "middle")
+    //       .text("Time of day");
 
     // add the Y Axis
     svg.append("g")

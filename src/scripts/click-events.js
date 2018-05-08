@@ -83,10 +83,6 @@ function initClickEvents() {
 
     // KID MEASUREMENT
     $( getDataComponent("kid-measurement") + " .back-btn" ).off().click(function() {
-        if (nextMeasurementIsAfterMeal) {
-            notifyForMeasurementAfter(5, true);
-        }
-        nextMeasurementIsAfterMeal = false;
         showKidMenu("kid-monitor");
         showComponent("kid-monitor");
     });
@@ -131,8 +127,14 @@ function initClickEvents() {
         updateHistoryMeasurement("kid", kidHistoryMeasurement);
     });
 
-    // KID NOTIFICATION
-    $( getDataComponent("kid-notification") ).off().click(function() {
+    // KID INJECTION NOTIFICATION
+    $( getDataComponent("kid-injection-notification") ).off().click(function() {
+        notifyForMeasurement(5);
+        showComponent("kid-monitor");
+    });
+
+    // KID MEASUREMENT NOTIFICATION
+    $( getDataComponent("kid-measurement-notification") ).off().click(function() {
         showComponent("kid-monitor");
     });
 
@@ -143,8 +145,7 @@ function initClickEvents() {
     // TOP BAR
     $( ".parent.subtitle" ).off().click(function() {
         if ( kid.active) {
-            notifyForMeasurementAfter(5, false);
-            nextMeasurementIsAfterMeal = true;
+            notifyForInjection(5);
             currentMode = "kid";
             showKidMenu("kid-monitor");
             showComponent("kid-monitor");
