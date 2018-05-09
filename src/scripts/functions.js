@@ -310,6 +310,13 @@ function notifyIfNewMeasurement() {
     
 }
 
+// hide measurement loading gif after specific seconds
+function hideMeasurementLoadingGifAfter(sec) {
+    setTimeout(function(){ 
+        $( getDataComponent("kid-measurement") + " .measurement-loading").addClass("hidden");
+    }, sec * 1000);
+}
+
 // draw d3 graph
 function draw(data, graph) {
 
