@@ -42,4 +42,13 @@
 
     } // .body
 
+    .measurement-loading {
+        position: absolute;
+        background-color: $white;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
 } // [data-component]
