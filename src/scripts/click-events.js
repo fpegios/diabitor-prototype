@@ -81,12 +81,14 @@ function initClickEvents() {
         $( getDataComponent("kid-measurement") + " .feedback .action").html(measurements[0].feedbackAction);
         kid.hasNewMeasurement = true;
         showKidMenu("kid-measurement");
+        hideMeasurementLoadingGifAfter(3);
         showComponent("kid-measurement");
     });
 
     // KID MEASUREMENT
     $( getDataComponent("kid-measurement") + " .back-btn" ).off().click(function() {
         showKidMenu("kid-monitor");
+        $( getDataComponent("kid-measurement") + " .measurement-loading").removeClass("hidden");
         showComponent("kid-monitor");
     });
 
