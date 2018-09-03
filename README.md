@@ -15,6 +15,8 @@ Run the project
 $ gulp
 ```
 
+*NB* The project can be run without the gulp client, by running `index.html` instead -- the node dependencies should be installed either way.
+
 ## Additional
 Clean generated dist folder
 ```sh
